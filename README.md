@@ -23,4 +23,4 @@ Javascript-todo-app is a web app used to create and view the user's tasks listed
 ### Collaborators
 
 Ngodi Albert: @ngodi  
-Juan Escobar: @CondingAngarita
+Juan Escobar: @CodingAngarita
