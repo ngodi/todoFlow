@@ -1,4 +1,4 @@
-class TodoList{
+export default class TodoList{
 //constructor
   constructor(title, description, dueDate, priority, notes, status){
       this.title = title;
