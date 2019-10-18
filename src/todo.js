@@ -1,10 +1,16 @@
-export default class TodoList{
+export default class TodoList {
 //constructor
-  constructor(title, description, dueDate, priority, notes, status){
+  constructor(id, title, description, dueDate, priority, notes, status){
+      this.id = id;
       this.title = title;
       this.description = description;
+      this.dueDate = dueDate;
+      this.priority = priority;
+      this.notes = notes;
+      this.status = status;
   }
 //setters
+/*
   set dueDate(dueDate){ 
      this.dueDate = dueDate; 
     }
@@ -18,24 +24,25 @@ export default class TodoList{
       this.status = status; 
     }
 //getters
-get title(){
-    return this.title
-}
-get description(){
-    return this.description;
-}
-get dueDate(){ 
-        return this.dueDate; 
-       }
-get priority(){ 
-         return this.priority; 
-       }
-get notes(){ 
-        return this.notes; 
-       }
-get status(){
-         return this.status; 
-       };
+  get title(){
+      return this.title
+  }
+  get description(){
+      return this.description;
+  }
+  get dueDate(){ 
+          return this.dueDate; 
+        }
+  get priority(){ 
+          return this.priority; 
+        }
+  get notes(){ 
+          return this.notes; 
+        }
+  get status(){
+          return this.status; 
+        };
+        */
 }
 
 //title, description, dueDate, priority,notes , checklist.
