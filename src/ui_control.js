@@ -19,6 +19,10 @@ const uiController = (() => {
     const appendToNode = (parentNode, childNode) => {
       parentNode.appendChild(childNode);
     };
+
+    const replaceNode = (parentClass, childNode) => {
+  
+    };
     
     const appendToDom = (parentId, childNode) => {
       domElementId(parentId).appendChild(childNode);
