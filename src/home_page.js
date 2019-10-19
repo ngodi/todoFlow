@@ -8,15 +8,14 @@ const homePage = (() => {
     const selectFields = ['todoPriority', 'todoStatus'];
   };
   const  displayTodoForm = () => {
-     const contentNode = uiController.domElementClass(greeting);
+     const contentNode = uiController.domElementClass('greeting');
   
      const todoDueDate = uiController.addNode('input');
      const todoPriority = uiController.addNode('input');
+     uiController.addAttribute(todoPriority, 'type', 'text');
      const todoNotes = uiController.addNode('input');
      const todoStatus = uiController.addNode('input');
-     uiController.appendToNode(contentNode, todoPriority);
-     uiController.appendToDom('greeting',todoPriority);
-     
+     uiController.replaceNode('left-content', todoPriority, contentNode);
     };
  
 

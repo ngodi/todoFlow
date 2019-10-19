@@ -20,8 +20,8 @@ const uiController = (() => {
       parentNode.appendChild(childNode);
     };
 
-    const replaceNode = (parentClass, childNode) => {
-  
+    const replaceNode = (parentClass, newNode, oldNode) => {
+      domElementClass(parentClass).replaceChild(newNode, oldNode);
     };
     
     const appendToDom = (parentId, childNode) => {
@@ -30,7 +30,7 @@ const uiController = (() => {
     
  
 
-    return { addNode, addAttribute, domElementId, domElementClass, addText, appendToNode, appendToDom,}
+    return { addNode, addAttribute, domElementId, domElementClass, addText, appendToNode, replaceNode, appendToDom,}
 })();
 
 export default uiController;
