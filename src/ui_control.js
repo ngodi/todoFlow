@@ -7,10 +7,13 @@ const uiController = (() => {
       element.setAttribute(property, value);
     };
 
-    const domElement = element => {
-      return document.querySelector(element);
+    const domElementId = element => {
+      return document.getElementById(element);
     };
 
+    const domElementClass = element => {
+      return document.getElementsByClassName(element)[0];
+    }
     const addText = text => document.createTextNode(text);
 
     const appendToNode = (parentNode, childNode) => {
@@ -18,12 +21,12 @@ const uiController = (() => {
     };
     
     const appendToDom = (parentId, childNode) => {
-      domElement(`#${parentId}`).appendChild(childNode);
+      domElementId(parentId).appendChild(childNode);
     };
     
  
 
-    return { addNode, addAttribute, addText, appendToNode, appendToDom,}
+    return { addNode, addAttribute, domElementId, domElementClass, addText, appendToNode, appendToDom,}
 })();
 
 export default uiController;
