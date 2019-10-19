@@ -1,7 +1,7 @@
 import TodoList from './todo'
-import todoController from './todo_control'
+import dataController from './data_control'
+import homePage from './home_page'
 
-const c = todoController.createTodo('title', 'desc');
-const c2 = todoController.createTodo('title 2 ', 'desc');
+const c = dataController.createTodo('title', 'desc');
+const c2 = dataController.createTodo('title 2 ', 'desc');
 
-alert(todoController.findTodo(c2).title);

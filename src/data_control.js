@@ -1,7 +1,6 @@
 import TodoList from './todo'
-import uiController from './ui_control'
 
-const todoController = (() => {
+const dataController = (() => {
     let todoListStorage = [];
     let counter = 0;
 
@@ -21,8 +20,8 @@ const todoController = (() => {
         todoListStorage.push(todo);
     };
 
-    return { createTodo, findTodo, findTodo, storeTodo, updateTodo}
+    return { createTodo, findTodo, findTodo, storeTodo}
 })();
 
-export default todoController;
+export default dataController;
 
