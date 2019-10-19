@@ -1,0 +1,11 @@
+.container{
+    padding-top: 20px;
+}
+.nav-items{
+    display: flex;
+    flex-direction: row;
+}
+.nav-items li{
+    list-style-type: none;
+    margin-right: 50px;
+}
