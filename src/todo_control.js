@@ -1,4 +1,5 @@
 import TodoList from './todo'
+import uiController from './ui_control'
 
 const todoController = (() => {
     let todoListStorage = [];
@@ -9,15 +10,18 @@ const todoController = (() => {
         storeTodo(toDo, todoListStorage);
         return toDo;
     };
-
-    const storeTodo = (todo, todoList) => {
-        todoList.push(todo);
+    const findTodo = todo => {
+      const found = todoListStorage.find(item => {
+          return todo.id == item.id;
+      });
+      return found;
     };
 
-    const editTodo = (todoListStorage, title) => {
+    const storeTodo = todo => {
+        todoListStorage.push(todo);
+    };
 
-    }
-    return { createTodo }
+    return { createTodo, findTodo, findTodo, storeTodo, updateTodo}
 })();
 
 export default todoController;
