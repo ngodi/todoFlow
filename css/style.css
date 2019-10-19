@@ -1,3 +1,10 @@
+.heading{
+    color: lightseagreen;
+    border: 1px solid lightgray;
+    padding: 5px;
+    box-shadow: 2px 3px lightskyblue;
+    border-radius: 5px;
+}
 .container{
     padding-top: 20px;
 }
@@ -8,4 +15,14 @@
 .nav-items li{
     list-style-type: none;
     margin-right: 50px;
+}
+
+.nav-items li:hover{
+    cursor: pointer;
+}
+.greeting p{
+    font-size: 40px;
+}
+.content img {
+    width: 400px;
 }
