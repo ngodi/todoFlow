@@ -1,16 +1,32 @@
-import TodoList from './todo'
-import dataController from './data_control'
-import uiController  from './ui_control';
-import homePage from './home_page'
-
-const c = dataController.createTodo('title', 'desc');
-const c2 = dataController.createTodo('title 2 ', 'desc');
-const c3 = uiController.domElementId('kick');
+import Todo from './models/todo'
+import Project from './models/project'
+import uiController  from './ui/ui_control';
+import todoForm from './ui/todo_form'
 
 
-const runAlert = () => {
-    alert('I was clicked');
+let todoListStorage = [];
+let counter = 0;
+
+const project = (project = 'default') => {
+     const newProject = new Project(project);
+     return newProject;
+};
+const todo = (title, description, dueDate = null , priority = 'normal', notes = null, status = 'not started', projectName = 'default') => {
+    const toDo = new Todo(counter++, title, description, dueDate, priority, notes, status, projectName);
+    storeTodo(toDo, todoListStorage);
+};
+const findTodo = todo => {
+  const found = todoListStorage.find(item => {
+      return todo.id == item.id;
+  });
+  return found;
 };
 
-c3.addEventListener('click', homePage.displayTodoForm);
+const storeProject = project => {
+    todoListStorage.push(project);
+};
+const storeTodo = todo => {
+    todoListStorage.push(todo);
+};
 
+document.querySelector('#kick').addEventListener('click', todoForm);

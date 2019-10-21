@@ -1,4 +1,4 @@
-import TodoList from './todo'
+import Todo from '../models/todo'
 
 const uiController = (() => {
     const addNode = element => document.createElement(element);
