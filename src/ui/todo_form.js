@@ -1,3 +1,5 @@
+import uiController from './ui_control'
+
 export const todoForm = () => {
   const inputForm = `<form>
   <div class="form-group">
@@ -32,9 +34,12 @@ export const todoForm = () => {
     <label for="notes">Notes</label>
     <textarea class="form-control" id="notes" rows="3"></textarea>
   </div>
+  <button type="button" class="btn btn-info" id="todoBtn">Add to project</button>
 </form>
   `;
-  document.querySelector('.greeting').innerHTML = inputForm;
+  document.querySelector('.content').innerHTML = inputForm;
+  const val = (uiController.domElementId('project').value != null)? uiController.domElementId('project').value: uiController.domElementId('select').value;
+  document.querySelector('.greeting').innerHTML = `<h3>Project: ${val}</h3>`;
 };
 
 export default todoForm;

@@ -2,6 +2,7 @@ import Todo from './models/todo'
 import uiController  from './ui/ui_control'
 import todoForm from './ui/todo_form'
 import projectForm from './ui/project_form'
+import elements from './ui/dom_elements';
 
 
 let todoListStorage = {};
@@ -25,4 +26,4 @@ const storeTodo = (todo, project) => {
     todoListStorage.project.push(todo);
 };
 
-document.querySelector('#kick').addEventListener('click', projectForm);
+elements.getStarted.addEventListener('click', projectForm);
