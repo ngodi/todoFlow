@@ -1,4 +1,4 @@
-import todoForm from './todo_form'
+import { todoForm } from './todo_form'
 
 export const projectForm = () => {
     const inputForm = `
@@ -20,5 +20,3 @@ export const projectForm = () => {
     document.querySelector('#kick').setAttribute('class', 'hidden');
     document.querySelector('#projectBtn').addEventListener('click', todoForm);
   };
-  
-  export default projectForm;

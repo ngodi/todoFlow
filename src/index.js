@@ -1,7 +1,7 @@
 import Todo from './models/todo'
 import uiController  from './ui/ui_control'
-import todoForm from './ui/todo_form'
-import projectForm from './ui/project_form'
+import { todoForm } from './ui/todo_form'
+import { projectForm } from './ui/project_form'
 import elements from './ui/dom_elements';
 
 
