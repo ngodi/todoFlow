@@ -1,6 +1,6 @@
 import Todo from './models/todo'
 import uiController  from './ui/ui_control'
-import { projectForm, getTodoInput, todoForm} from './ui/forms'
+import formInput from './ui/forms'
 import elements from './ui/dom_elements';
 
 
@@ -25,8 +25,8 @@ const storeTodo = (todo, project) => {
     todoListStorage.project.push(todo);
 };
 
-elements.getStarted.addEventListener('click', projectForm);
+elements.getStarted.addEventListener('click', formInput.projectForm);
+ 
 
-if(getTodoInput){
-    console.log(getTodoInput);
-}
+
+
