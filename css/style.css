@@ -5,10 +5,7 @@
 html{
     background-color:lightcyan;
 }
-body{
-    width: 1600px;
-    margin: 0 auto;
-}
+
 .heading{
     color: lightseagreen;
     border: 1px solid lightgray;
@@ -22,6 +19,7 @@ body{
 .navbar{
     background-color: white;
     padding: 10px 100px;
+    box-sizing: border-box;
 }
 .nav-items{
     display: flex;
@@ -29,15 +27,16 @@ body{
 }
 .nav-items li{
     list-style-type: none;
-    margin-right: 50px;
+    margin-left: 50px;
 }
 
 .nav-items li:hover{
     cursor: pointer;
 }
 .content-div{
-    margin-top: 150px;
+    margin-top: 50px;
     padding: 50px;
+    box-sizing: border-box;
 }
 .left-content p{
     font-size: 40px;
