@@ -29,15 +29,18 @@ const createTodo = (list) => {
 };
 
 const displayProjects = (list) => {
+ let projectOutput = `<ul class='projectList'>`;
     list.forEach((element) => {
-        alert(element);
+        projectOutput += `<li id=${element}> ${element} </li>`;
       });
+      projectOutput += `</ul>`;
+  uiController.domElementClass('projectList').innerHTML =  projectOutput;
 };
 
 const init = () => {
     createProject(projects);
     createTodo(todoListStorage);
-    displayProjects(projects);
+    //displayProjects(projects);
   };
 
 init();
