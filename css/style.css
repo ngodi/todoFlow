@@ -2,10 +2,6 @@
     padding: 0;
     margin: 0;
 }
-html{
-    background-color:lightcyan;
-}
-
 .heading{
     color: lightseagreen;
     border: 1px solid lightgray;
@@ -15,6 +11,9 @@ html{
 }
 .container{
     padding-top: 20px;
+}
+.main-div{
+    margin-bottom: 100px;
 }
 .navbar{
     background-color: white;
@@ -48,3 +47,16 @@ html{
 .hidden{
       display: none;
   }
+
+.greeting{
+    padding-top: 100px;
+}
+
+.todoDiv{
+    margin: 0 auto;
+}
+
+.projectList{
+    padding-bottom: 100px;
+    text-align: center;
+}
