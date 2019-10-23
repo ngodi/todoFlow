@@ -15,17 +15,12 @@ export const getTodoInput = () =>{
 };
 
 export const todoForm = () => {
-  document.querySelector('#imgId').classList.add('hidden');
-  document.querySelector('#todoDiv').classList.remove('hidden');
   document.querySelector('#projectForm').classList.add('hidden');
-  document.querySelector('.greeting').classList.add('hidden');
 
-  const project = (uiController.domElementId('project').value != null)? uiController.domElementId('project').value: uiController.domElementId('select').value;
-  uiController.domElementId('projectTitle').innerHTML = `Project name: ${project}` ;
+  const project = uiController.domElementId('project').value;
   return project;
 };
 
 export const projectForm = () => {
-    document.querySelector('#kick').classList.add('hidden');
     document.querySelector('#projectForm').classList.remove('hidden');
   };

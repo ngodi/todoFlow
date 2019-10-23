@@ -10,12 +10,11 @@ let counter = 0;
 
  
 const createProject = (list) => {
- elements.getStarted.addEventListener('click', projectForm); 
- uiController.domElementId('kick1').addEventListener('click', projectForm);
+ elements.newProject.addEventListener('click', projectForm); 
  elements.projectBtn.addEventListener('click', () => {
     const newProject = todoForm();
     list.push(newProject) ;
-    displayProjects(projects);
+    //displayProjects(projects);
   });
 };
 
