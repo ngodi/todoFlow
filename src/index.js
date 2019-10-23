@@ -4,35 +4,40 @@ import {projectForm, todoForm, getTodoInput} from './ui/forms'
 import elements from './ui/dom_elements';
 
 
-let todoListStorage = [];
-let projects = [];
+const todoListStorage = [];
+const projects = [];
 let counter = 0;
 
  
-const createProject = () => {
+const createProject = (list) => {
  elements.getStarted.addEventListener('click', projectForm); 
+ uiController.domElementId('kick1').addEventListener('click', projectForm);
  elements.projectBtn.addEventListener('click', () => {
     const newProject = todoForm();
-    projects.push(newProject) ;
+    list.push(newProject) ;
+    displayProjects(projects);
   });
 };
 
-const createTodo = () => {   
+const createTodo = (list) => {   
     elements.todoBtn.addEventListener('click', () => {
     const todos = getTodoInput();
-    const project = projects[projects.length - 1];
+    const project = list[list.length - 1];
     const toDo = new Todo(project, counter++, todos.title, todos.desc, todos.dueDate, todos.priority, todos.notes, todos.status);
-    todoListStorage.push(toDo);
+    list.push(toDo);
   });
-    
-    
- 
 };
 
+const displayProjects = (list) => {
+    list.forEach((element) => {
+        alert(element);
+      });
+};
 
 const init = () => {
-    createProject();
-    createTodo();
+    createProject(projects);
+    createTodo(todoListStorage);
+    displayProjects(projects);
   };
 
 init();
