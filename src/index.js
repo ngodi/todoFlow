@@ -1,29 +1,33 @@
 import Todo from './models/todo'
+import Project from './models/project'
 import uiController  from './ui/ui_control'
-import formInput from './ui/forms'
+import {projectForm, todoForm, getTodoInput} from './ui/forms'
 import elements from './ui/dom_elements';
 
 
 let todoListStorage = [];
-let projects = {};
+let projects = [];
 let counter = 0;
 
-const todo = (title, description, dueDate = null , priority = 'normal', notes = null, status = 'not started') => {
+ 
+const createProject = () => {
+elements.getStarted.addEventListener('click', projectForm); 
+elements.todoBtn.addEventListener('click', () => {
+    projects.todos = getTodoInput();
+  });
+  
+};
+
+const createTodo = () => {
     const toDo = new Todo(counter++, title, description, dueDate, priority, notes, status);
+    document.querySelector('#projectBtn').addEventListener('click', () => {
+        projects.push(todoForm());
+     });
 };
 
 
-elements.getStarted.addEventListener('click', formInput.projectForm);
- 
+const init = () => {
+    createProject();
+  };
 
-
-
-document.querySelector('#projectBtn').addEventListener('click', () => {
-   projects.project =  todoForm();
-});
-
-document.querySelector('#todoBtn').addEventListener('click', () => {
-  projects.todos = getTodoInput();
-  todoListStorage.push(projects);
-  console.log(todoListStorage);
-});
+init();
