@@ -33,30 +33,55 @@
     cursor: pointer;
 }
 .content-div{
-    margin-top: 50px;
-    padding: 50px;
+    margin-top: 100px;
     box-sizing: border-box;
 }
-.left-content p{
+.right-content p{
     font-size: 40px;
 }
-.content img {
-    width: 400px;
-}
+
 
 .hidden{
       display: none;
   }
 
 .greeting{
-    padding-top: 100px;
-}
-
-.todoDiv{
-    margin: 0 auto;
-}
-
-.projectList{
-    padding-bottom: 100px;
+    padding-top: 50px;
     text-align: center;
+    color: rgb(19, 167, 226);
+}
+
+
+.projectForm, .actionPanel{
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid lightseagreen;
+    border-radius: 5px;
+    background-color: lightskyblue;
+    
+}
+
+.projectForm label, .actionPanel label{
+    font-size: 20px;
+    font-weight: bold;
+}
+.project{
+    width: 80%;
+    margin-right: 20px;
+    border-radius: 8px;
+    height: 40px;
+}
+
+.selProject{
+    width: 80%;
+    margin-right: 20px;
+    border-radius: 8px;
+    height: 40px;
+}
+
+.todoForm{
+    background-color: lightskyblue;
+    padding: 10px;
+    box-sizing:border-box;
+    border-radius: 5px;
 }
