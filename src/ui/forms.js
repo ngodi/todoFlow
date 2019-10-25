@@ -76,7 +76,7 @@ export const todoForm = () => {
                 </div>
               </div>
               </div>`;
-  elements.actionPanel.insertAdjacentHTML('beforeend', markup);
+  elements.actionPanel.innerHTML = markup;
 };
 
 export const projectForm = () => {
