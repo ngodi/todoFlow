@@ -16,9 +16,9 @@ export const getTodoInput = () =>{
 };
 
 export const todoForm = () => {
- const markup = `<div class='col-md-4'></div>
- <div class='col-md-4 todoForm'>
- <h3>Enter Todo Information</h3>
+ const markup = `
+ <div class='todoForm'>
+   <h3>Enter Todo Information</h3>
      <div class="form-group row">
         <label for="title" class="col-sm-2">Title</label> 
         <div class="col-sm-10">
@@ -71,9 +71,7 @@ export const todoForm = () => {
           <button type="button" class="btn btn-info btn-block" id="todoBtn" >Add to project</button>
             </div>
      </div>
- </div>
- <div class='col-md-4'></div>
-              `;
+ </div>`;
   elements.actionPanel.innerHTML = markup;
 };
 
@@ -88,8 +86,8 @@ export const getProjectInput = () => {
     uiController.domElementId('selProject').appendChild(option);
   };
 export const projectListHeading = () => {
-  let markup = `<div class='projectListHeading'>Your Projects</div>`;
-  elements.projectsPanel.insertAdjacentHTML('beforebegin', markup);
+  let markup = `<div class='projectListHeading sub-heading'>Your Projects</div>`;
+  elements.projectsPanel.insertAdjacentHTML('afterbegin', markup);
 };
   export const projectDisplay = (project) => {
       let node = document.createElement('li');
@@ -98,3 +96,12 @@ export const projectListHeading = () => {
       node.appendChild(text);
       elements.projectsPanel.appendChild(node);
   };
+  export const selProjectHeading = () => {
+      uiController.domElementId('selProject').addEventListener('change',() =>{
+      let selectedProject = document.querySelector('#selProject').value;
+      //selectedProject.addClassList('active');
+      const markup = `<h3 class='sub-heading'>Project - ${selectedProject} Todos: </h3>`;
+      uiController.domElementId('selProjectPanel').innerHTML =  markup;
+    });
+  };
+ 
