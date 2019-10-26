@@ -89,10 +89,14 @@ export const getProjectInput = () => {
     option.appendChild(nodeText);
     uiController.domElementId('selProject').appendChild(option);
   };
-
+export const projectListHeading = () => {
+  let markup = `<div class='projectListHeading'>Your Projects</div>`;
+  elements.actionPanel.insertAdjacentHTML('afterend', markup);
+};
   export const projectDisplay = (project) => {
       let node = document.createElement('li');
+      node.setAttribute('class', 'projectItem');
       let text = document.createTextNode(project);
       node.appendChild(text);
-      uiController.domElementId('projectsPanel').appendChild(node);
+      elements.projectsPanel.appendChild(node);
   };

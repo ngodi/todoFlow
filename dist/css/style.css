@@ -93,6 +93,19 @@
     height: 400px;
 }
 
-.projectsPanel li{
+.projectItem{
     list-style-type: none;
+    border: 1px solid skyblue;
+    padding: 5px;
+    margin: 10px;
+    width: 400px;
+    border-radius: 5px;
+    box-shadow: 2px 4px 4px lightgray;
+    transition: all 2s;
+}
+.projectItem:hover{
+transform: scale(1.1);
+}
+.projectListHeading{
+    font-size: 30px;
 }

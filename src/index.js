@@ -1,6 +1,6 @@
 import Todo from './models/todo'
 import uiController  from './ui/ui_control'
-import {projectDisplay, projectOption, todoForm, getTodoInput, getProjectInput} from './ui/forms'
+import {projectListHeading, projectDisplay, projectOption, todoForm, getTodoInput, getProjectInput} from './ui/forms'
 import elements from './ui/dom_elements';
 
 
@@ -25,5 +25,6 @@ elements.projectBtn.addEventListener('click', ()=>{
     projectDisplay(project);
   }
   
-  
 });
+
+projectListHeading();
