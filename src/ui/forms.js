@@ -18,7 +18,7 @@ export const getTodoInput = () =>{
 export const todoForm = () => {
  const markup = `<div class='col-md-4'></div>
  <div class='col-md-4 todoForm'>
- <h3>Enter Todo Information</h3><span  id ='close'>close</span>
+ <h3>Enter Todo Information</h3>
      <div class="form-group row">
         <label for="title" class="col-sm-2">Title</label> 
         <div class="col-sm-10">
