@@ -2,6 +2,7 @@ import uiController from './ui_control';
 import elements from './dom_elements';
 
 export const getTodoInput = () =>{
+  const project = uiController.domElementId('selProject').value;
   const title = uiController.domElementId('title').value;
   const desc = uiController.domElementId('desc').value;
   const dueDate = uiController.domElementId('date').value;
@@ -10,7 +11,7 @@ export const getTodoInput = () =>{
   const notes = uiController.domElementId('notes').value;
 
   return {
-    title, desc, dueDate, priority, status, notes
+    project, title, desc, dueDate, priority, status, notes
   }
 };
 
