@@ -9,10 +9,13 @@ const projects = ['Default'];
 let counter = 0;
 
 elements.addTodoBtn.addEventListener('click', ()=>{
-  todoForm();
- uiController.domElementId('todoBtn').addEventListener('click', ()=>{
+  todoForm(); 
+  uiController.domElementId('close').addEventListener('click', ()=>{
   elements.actionPanel.innerHTML = '';
-   const todoData = getTodoInput();
+ });
+ uiController.domElementId('todoBtn').addEventListener('click', ()=>{
+
+  const todoData = getTodoInput();
   const newTodo = new Todo(todoData.project,counter++, todoData.title, todoData.desc, todoData.dueDate, todoData.priority, todoData.notes, todoData.status);
   todoListStorage.push(newTodo);
  });

@@ -64,15 +64,15 @@ export const todoForm = () => {
        </div>
     </div>
     <div class="form-group row">
-            <div class="col-sm-2"></div>
+            <div class="col-sm-2"> 
+             <button type="button" class="btn btn-danger close" id="close">close</button>
+            </div>
             <div class="col-sm-10">
-              <button type="button" class="btn btn-info btn-block" id="todoBtn" >Add to project</button>
+          <button type="button" class="btn btn-info btn-block" id="todoBtn" >Add to project</button>
             </div>
      </div>
  </div>
  <div class='col-md-4'></div>
-
-
               `;
   elements.actionPanel.innerHTML = markup;
 };
@@ -89,7 +89,7 @@ export const getProjectInput = () => {
   };
 export const projectListHeading = () => {
   let markup = `<div class='projectListHeading'>Your Projects</div>`;
-  elements.actionPanel.insertAdjacentHTML('beforebegin', markup);
+  elements.projectsPanel.insertAdjacentHTML('beforebegin', markup);
 };
   export const projectDisplay = (project) => {
       let node = document.createElement('li');
