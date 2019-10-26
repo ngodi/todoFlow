@@ -5,7 +5,7 @@ import elements from './ui/dom_elements';
 
 
 const todoListStorage = [];
-const projects = [];
+const projects = ['Default'];
 let counter = 0;
 
 elements.addTodoBtn.addEventListener('click', ()=>{
@@ -20,4 +20,9 @@ elements.addTodoBtn.addEventListener('click', ()=>{
 elements.projectBtn.addEventListener('click', ()=>{
   const project = getProjectInput();
   projects.push(project);
-})
+  let option = document.createElement('option');
+  let nodeText = document.createTextNode(project);
+  option.appendChild(nodeText);
+    uiController.domElementId('selProject').appendChild(option);
+  
+});
