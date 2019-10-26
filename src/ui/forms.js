@@ -82,3 +82,10 @@ export const todoForm = () => {
 export const getProjectInput = () => {
    return elements.project.value;
   };
+
+  export const projectOption = (project) => {
+    let option = document.createElement('option');
+    let nodeText = document.createTextNode(project);
+    option.appendChild(nodeText);
+    uiController.domElementId('selProject').appendChild(option);
+  }

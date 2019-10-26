@@ -1,6 +1,6 @@
 import Todo from './models/todo'
 import uiController  from './ui/ui_control'
-import {projectForm, todoForm, getTodoInput, getProjectInput} from './ui/forms'
+import {projectOption, todoForm, getTodoInput, getProjectInput} from './ui/forms'
 import elements from './ui/dom_elements';
 
 
@@ -21,10 +21,7 @@ elements.projectBtn.addEventListener('click', ()=>{
   const project = getProjectInput();
   if(!projects.includes(project)){
     projects.push(project);
-    let option = document.createElement('option');
-  let nodeText = document.createTextNode(project);
-  option.appendChild(nodeText);
-    uiController.domElementId('selProject').appendChild(option);
+    projectOption(project);
   }
   
   
