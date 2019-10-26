@@ -19,10 +19,13 @@ elements.addTodoBtn.addEventListener('click', ()=>{
 
 elements.projectBtn.addEventListener('click', ()=>{
   const project = getProjectInput();
-  projects.push(project);
-  let option = document.createElement('option');
+  if(!projects.includes(project)){
+    projects.push(project);
+    let option = document.createElement('option');
   let nodeText = document.createTextNode(project);
   option.appendChild(nodeText);
     uiController.domElementId('selProject').appendChild(option);
+  }
+  
   
 });
