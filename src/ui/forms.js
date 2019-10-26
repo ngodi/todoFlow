@@ -88,4 +88,11 @@ export const getProjectInput = () => {
     let nodeText = document.createTextNode(project);
     option.appendChild(nodeText);
     uiController.domElementId('selProject').appendChild(option);
-  }
+  };
+
+  export const projectDisplay = (project) => {
+      let node = document.createElement('li');
+      let text = document.createTextNode(project);
+      node.appendChild(text);
+      uiController.domElementId('projectsPanel').appendChild(node);
+  };

@@ -1,6 +1,6 @@
 import Todo from './models/todo'
 import uiController  from './ui/ui_control'
-import {projectOption, todoForm, getTodoInput, getProjectInput} from './ui/forms'
+import {projectDisplay, projectOption, todoForm, getTodoInput, getProjectInput} from './ui/forms'
 import elements from './ui/dom_elements';
 
 
@@ -22,6 +22,7 @@ elements.projectBtn.addEventListener('click', ()=>{
   if(!projects.includes(project)){
     projects.push(project);
     projectOption(project);
+    projectDisplay(project);
   }
   
   

@@ -92,3 +92,7 @@
     width: 600px;
     height: 400px;
 }
+
+.projectsPanel li{
+    list-style-type: none;
+}
