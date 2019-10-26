@@ -9,8 +9,9 @@ const projects = ['Default'];
 let counter = 0;
 
 elements.addTodoBtn.addEventListener('click', ()=>{
- todoForm();
+  todoForm();
  uiController.domElementId('todoBtn').addEventListener('click', ()=>{
+  elements.actionPanel.innerHTML = '';
    const todoData = getTodoInput();
   const newTodo = new Todo(todoData.project,counter++, todoData.title, todoData.desc, todoData.dueDate, todoData.priority, todoData.notes, todoData.status);
   todoListStorage.push(newTodo);
@@ -18,6 +19,7 @@ elements.addTodoBtn.addEventListener('click', ()=>{
 });
 
 elements.projectBtn.addEventListener('click', ()=>{
+
   const project = getProjectInput();
   if(!projects.includes(project)){
     projects.push(project);

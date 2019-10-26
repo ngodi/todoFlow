@@ -1,24 +1,6 @@
-import uiController from './ui_control';
-import elements from './dom_elements';
-
-export const getTodoInput = () =>{
-  const project = uiController.domElementId('selProject').value;
-  const title = uiController.domElementId('title').value;
-  const desc = uiController.domElementId('desc').value;
-  const dueDate = uiController.domElementId('date').value;
-  const priority = uiController.domElementId('priority').value;
-  const status = uiController.domElementId('status').value;
-  const notes = uiController.domElementId('notes').value;
-
-  return {
-    project, title, desc, dueDate, priority, status, notes
-  }
-};
-
-export const todoForm = () => {
- const markup = `<div class='col-md-4'></div>
- <div class='col-md-4 todoForm'>
- <h3>Enter Todo Information</h3><span  id ='close'>close</span>
+<div class='col-md-3'></div>
+ <div class='col-md-6 todoForm'>
+ <h3>Enter Todo Information</h3>
      <div class="form-group row">
         <label for="title" class="col-sm-2">Title</label> 
         <div class="col-sm-10">
@@ -70,31 +52,5 @@ export const todoForm = () => {
             </div>
      </div>
  </div>
- <div class='col-md-4'></div>
+ <div class='col-md-3'></div>
 
-
-              `;
-  elements.actionPanel.innerHTML = markup;
-};
-
-export const getProjectInput = () => {
-   return elements.project.value;
-  };
-
-  export const projectOption = (project) => {
-    let option = document.createElement('option');
-    let nodeText = document.createTextNode(project);
-    option.appendChild(nodeText);
-    uiController.domElementId('selProject').appendChild(option);
-  };
-export const projectListHeading = () => {
-  let markup = `<div class='projectListHeading'>Your Projects</div>`;
-  elements.actionPanel.insertAdjacentHTML('beforebegin', markup);
-};
-  export const projectDisplay = (project) => {
-      let node = document.createElement('li');
-      node.setAttribute('class', 'projectItem');
-      let text = document.createTextNode(project);
-      node.appendChild(text);
-      elements.projectsPanel.appendChild(node);
-  };
