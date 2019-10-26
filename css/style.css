@@ -14,7 +14,7 @@
 }
 .main-div{
     margin-bottom: 100px;
-    padding: 40px;
+    padding: 20px;
 }
 .navbar{
     background-color: white;
@@ -34,22 +34,19 @@
     cursor: pointer;
 }
 .content-div{
-    margin-top: 100px;
+    margin-top: 50px;
     box-sizing: border-box;
 }
-.right-content p{
-    font-size: 40px;
-}
-
 
 .hidden{
       display: none;
   }
 
 .greeting{
-    padding-top: 50px;
+    padding-top: 200px;
     text-align: center;
-    color: rgb(19, 167, 226);
+    color: rgb(19, 167, 226); 
+    font-size: 40px;
 }
 
 
@@ -85,15 +82,12 @@
     padding: 10px;
     box-sizing:border-box;
     border-radius: 5px;
-    z-index: 10;
-    position: relative;
-    top: -300px;
     box-shadow: 5px 10px 10px lightgray;
 }
 
 .img-div{
-    margin: 150px 0 0 0;
-    width: 600px;
+    margin: 100px 0 0 0;
+    width: 800px;
     height: 400px;
 }
 
@@ -101,16 +95,27 @@
     list-style-type: none;
     border: 1px solid skyblue;
     padding: 5px;
-    margin: 10px;
-    width: 400px;
+    margin: 10px 0;
+    width: 500px;
     border-radius: 5px;
     box-shadow: 2px 4px 4px lightgray;
-    transition: all 2s;
+    transition: all 0.5s;
 }
 .projectItem:hover{
-transform: scale(1.1);
+transform: scale(1.05);
 cursor: pointer;
 }
-.projectListHeading{
+
+.sub-heading{
     font-size: 30px;
+    text-align: center;
+    border: 1px solid rgb(192, 106, 106);
+    background-color:lightgray;
+    padding: 5px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 2px 4px 4px lightgray;
+}
+.active{
+    background-color: skyblue;
 }
