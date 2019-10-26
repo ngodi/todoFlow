@@ -20,26 +20,26 @@ export const todoForm = () => {
  <div class='todoForm'>
    <h3>Enter Todo Information</h3>
      <div class="form-group row">
-        <label for="title" class="col-sm-2">Title</label> 
-        <div class="col-sm-10">
+        <label for="title" class="col-sm-3">Title</label> 
+        <div class="col-sm-8">
          <input type="text" class="form-control" id="title" placeholder="">
         </div>
      </div>
      <div class="form-group row">
-       <label for="desc" class="col-sm-2">Description</label>
-       <div class="col-sm-10">
+       <label for="desc" class="col-sm-3">Description</label>
+       <div class="col-sm-8">
          <input type="text" class="form-control" id="desc" placeholder="">
       </div>
      </div>
      <div class="form-group row">
-       <label for="date" class="col-sm-2">Due date</label>
-       <div class="col-sm-10">
+       <label for="date" class="col-sm-3">Due date</label>
+       <div class="col-sm-8">
         <input type="date" class="form-control" id="date" placeholder="">
        </div>
      </div>
    <div class="form-group row">
-       <label for="priority" class="col-sm-2">Priority</label>
-       <div class="col-sm-10">
+       <label for="priority" class="col-sm-3">Priority</label>
+       <div class="col-sm-8">
        <select class="form-control" id="priority">
            <option>Normal</option>
            <option>Low</option>
@@ -48,8 +48,8 @@ export const todoForm = () => {
        </div>
    </div>
    <div class="form-group row">
-       <label for="status" class="col-sm-2">Status</label>
-       <div class="col-sm-10">
+       <label for="status" class="col-sm-3">Status</label>
+       <div class="col-sm-8">
            <select class="form-control" id="status">
            <option>New</option>
            <option>Pending</option>
@@ -58,16 +58,16 @@ export const todoForm = () => {
        </div>
     </div>
     <div class="form-group row">
-       <label for="notes" class="col-md-2">Notes</label>
-       <div class="col-sm-10">
-        <textarea class="form-control" id="notes" rows="1"></textarea>
+       <label for="notes" class="col-md-3">Notes</label>
+       <div class="col-sm-8">
+        <textarea class="form-control" id="notes" rows="3"></textarea>
        </div>
     </div>
     <div class="form-group row">
-            <div class="col-sm-2"> 
+            <div class="col-sm-3"> 
              <button type="button" class="btn btn-danger close" id="close">close</button>
             </div>
-            <div class="col-sm-10">
+            <div class="col-sm-8">
           <button type="button" class="btn btn-info btn-block" id="todoBtn" >Add to project</button>
             </div>
      </div>
