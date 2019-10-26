@@ -36,14 +36,12 @@
           </div>
         </div>
         <div class="row content-div">
-            <div class="col-md-6">
-                <ul class="projectsPanel"  id="projectsPanel"></ul>
-          </div>
-            <div class="col-md-6">  
+        
+            <div class="col-md-4">  
                 <!-- New project form-->
                 <div class="projectForm row">
-                  <label for="project" class="col-sm-4">New project name:</label>  
-                  <div class="col-sm-8">
+                   
+                  <div class="col-sm-12">
                     <input type="text"  id="project" class="project" placeholder="Enter new project name ..."> 
                     <button type="button" class="btn btn-info btn-sm" id="projectBtn">Submit</button> 
                   </div> 
@@ -51,28 +49,30 @@
                 </div>
                 <!-- Project selection form-->
                 <div class="projectForm row">
-                    <label for="selProject" class="col-sm-4">Select project:</label> 
-                    <div class="col-sm-8">
+                    <div class="col-sm-12">
+                       <label for="selProject">Select project </label>
                         <select id="selProject" class="selProject">
                             <option>Default</option>
                         </select> 
+                       
                     </div> 
+                    
                      
                   </div>
                     <!-- action buttons-->
                 <div class="projectForm row">
                   <button type="button" class="btn btn-success btn-md col-sm-12" id="addTodo">Add Todo</button> 
                  </div>
-    
+                 <div class="actionPanel" id="actionPanel"> </div>
                 
               </div>
+              <div class="col-md-8">
+                  <ul class="projectsPanel"  id="projectsPanel"></ul>
+                  <div class="selProjectPanel"  id="selProjectPanel"> </div>
+            </div>
            
         </div>
-         <div class="row">
-           <div class="col-md-6 selProjectPanel"  id="selProjectPanel"> </div>
-           <div class="col-md-6 actionPanel" id="actionPanel"> </div>
-           
-        </div>
+    
       </div>
     <script  src="main.js"></script>
   </body>
