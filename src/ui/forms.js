@@ -9,7 +9,6 @@ export const getTodoInput = () =>{
   const status = uiController.domElementId('status').value;
   const notes = uiController.domElementId('notes').value;
 
-  //document.querySelector('#todoDiv').classList.add('hidden');
   return {
     title, desc, dueDate, priority, status, notes
   }
@@ -79,6 +78,6 @@ export const todoForm = () => {
   elements.actionPanel.innerHTML = markup;
 };
 
-export const projectForm = () => {
-    document.querySelector('#projectForm').classList.remove('hidden');
+export const getProjectInput = () => {
+   return elements.project.value;
   };

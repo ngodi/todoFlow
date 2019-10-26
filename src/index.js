@@ -1,6 +1,6 @@
 import Todo from './models/todo'
 import uiController  from './ui/ui_control'
-import {projectForm, todoForm, getTodoInput} from './ui/forms'
+import {projectForm, todoForm, getTodoInput, getProjectInput} from './ui/forms'
 import elements from './ui/dom_elements';
 
 
@@ -11,3 +11,9 @@ let counter = 0;
 elements.addTodoBtn.addEventListener('click', ()=>{
  todoForm();
 });
+
+elements.projectBtn.addEventListener('click', ()=>{
+  const project = getProjectInput();
+  projects.push(project);
+  alert(projects);
+})

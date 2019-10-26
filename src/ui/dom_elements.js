@@ -2,7 +2,7 @@ import uiController from './ui_control'
 
 export  const elements = {
      actionPanel: uiController.domElementId('actionPanel'),
-     newProject: uiController.domElementId('kick'),
+     project: uiController.domElementId('project'),
      addTodoBtn: uiController.domElementId('addTodo'),
      projectBtn: uiController.domElementId('projectBtn')
 };
