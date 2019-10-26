@@ -42,33 +42,77 @@
                 <div class="projectForm row">
                    
                   <div class="col-sm-12">
-                    <input type="text"  id="project" class="project" placeholder="Enter new project name ..."> 
-                    <button type="button" class="btn btn-info btn-sm" id="projectBtn">Submit</button> 
-                  </div> 
-                   
+                    <input type="text"  id="project" class="project"  placeholder="Enter new project name ..."> 
+                    <select id="selProject" class="selProject">
+                        <option>Default</option>
+                    </select> 
+                  </div>   
                 </div>
-                <!-- Project selection form-->
-                <div class="projectForm row">
-                    <div class="col-sm-12">
-                       <label for="selProject">Select project </label>
-                        <select id="selProject" class="selProject">
-                            <option>Default</option>
-                        </select> 
-                       
-                    </div> 
-                    
-                     
-                  </div>
-                    <!-- action buttons-->
-                <div class="projectForm row">
-                  <button type="button" class="btn btn-success btn-md col-sm-12" id="addTodo">Add Todo</button> 
-                 </div>
-                 <div class="actionPanel" id="actionPanel"> </div>
+                 <div class="actionPanel" id="actionPanel">
+                    <div class='todoForm'>
+                        <h3>Enter Todo Information</h3>
+                          <div class="form-group row">
+                             <label for="title" class="col-sm-3">Title</label> 
+                             <div class="col-sm-8">
+                              <input type="text" class="form-control" id="title" placeholder="">
+                             </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="desc" class="col-sm-3">Description</label>
+                            <div class="col-sm-8">
+                              <input type="text" class="form-control" id="desc" placeholder="">
+                           </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="date" class="col-sm-3">Due date</label>
+                            <div class="col-sm-8">
+                             <input type="date" class="form-control" id="date" placeholder="">
+                            </div>
+                          </div>
+                        <div class="form-group row">
+                            <label for="priority" class="col-sm-3">Priority</label>
+                            <div class="col-sm-8">
+                            <select class="form-control" id="priority">
+                                <option>Normal</option>
+                                <option>Low</option>
+                                <option>High</option>
+                            </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="status" class="col-sm-3">Status</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" id="status">
+                                <option>Pending</option>
+                                <option>Completed</option>
+                            </select>
+                            </div>
+                         </div>
+                         <div class="form-group row">
+                            <label for="notes" class="col-md-3">Notes</label>
+                            <div class="col-sm-8">
+                             <textarea class="form-control" id="notes" rows="3"></textarea>
+                            </div>
+                         </div>
+                         <div class="form-group row">
+                                 <div class="col-sm-3"> </div>
+                                 <div class="col-sm-8">
+                               <button type="button" class="btn btn-info btn-block" id="todoBtn" >Add to project</button>
+                                 </div>
+                          </div>
+                      </div>
+                </div>
                 
               </div>
               <div class="col-md-8">
-                  <ul class="projectsPanel"  id="projectsPanel"></ul>
-                  <div class="selProjectPanel"  id="selProjectPanel"> </div>
+                  <h3 class='projectListHeading sub-heading'>Your Projects</h3>
+                  <ul class="projectsPanel"  id="projectsPanel">
+
+                  </ul>
+                  <div>
+                    <div class="selProjectPanel"  id="selProjectPanel"></div>
+                    <div><ol class="todoList" id="todoList"></ol></div>
+                  </div>
             </div>
            
         </div>
