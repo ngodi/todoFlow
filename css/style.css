@@ -108,3 +108,9 @@ cursor: pointer;
 .active{
     background-color: skyblue;
 }
+.errors{
+    color: red;
+}
+.success{
+    color: green;
+}
