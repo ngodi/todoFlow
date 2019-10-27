@@ -5,7 +5,7 @@ import elements from './dom_elements';
     let option = document.createElement('option');
     let nodeText = document.createTextNode(project);
     option.appendChild(nodeText);
-    uiController.domElementId('selProject').appendChild(option);
+    elements.selProject.appendChild(option);
   };
 
   export const projectDisplay = (project) => {

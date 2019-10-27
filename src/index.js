@@ -22,6 +22,7 @@ const createProject = () => {
     let project = getProjectInput();
     if(!projects.includes(project)){
       projects.push(project);
+      projectOption(project);
       errors = '';
       displayErrors(errors);
     }else{
