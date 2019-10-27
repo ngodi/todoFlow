@@ -20,3 +20,12 @@ import elements from './dom_elements';
   export const displayErrors = (error) => {
    elements.errors.innerHTML = error;
   };
+
+  export const displayTodo = (item) => {
+    let node = document.createElement('li');
+    node.setAttribute('class', 'todoItem');
+    node.setAttribute('id', item);
+    let text = document.createTextNode(item);
+    node.appendChild(text);
+    elements.todoPanel.insertAdjacentHTML('beforeend', node.innerText);
+  };

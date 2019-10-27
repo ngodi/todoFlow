@@ -8,6 +8,7 @@ export  const elements = {
      projectsPanel: uiController.domElementId('projectsPanel'),
      todoBtn: uiController.domElementId('todoBtn'),
      errors: uiController.domElementClass('errors'),
+     todoPanel: uiController.domElementId('todoPanel'),
 };
 
 export default elements;

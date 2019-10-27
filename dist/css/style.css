@@ -85,10 +85,34 @@
     border: 1px solid skyblue;
     padding: 5px;
     margin: 10px 0;
-    width: 500px;
+    width: 95%;
     border-radius: 5px;
     box-shadow: 2px 4px 4px lightgray;
     transition: all 0.5s;
+    overflow: hidden;
+}
+.todoItem{
+    border: 1px solid black;
+    padding: 5px;
+    margin: 10px auto;
+    width: 95%;
+    box-shadow: 2px 4px 4px lightgray;
+}
+
+.todoPanel{
+    border: 1px solid skyblue;
+    padding: 10px; 
+    margin: 10px auto;
+    border-radius: 5px;
+    height: 800px;
+    overflow: scroll;
+}
+.projectsPanel{
+    border: 1px solid orange;
+    height: 800px;
+    padding: 10px 20px; 
+    margin: 10px auto;
+    overflow: scroll;
 }
 .projectItem:hover{
 transform: scale(1.05);
