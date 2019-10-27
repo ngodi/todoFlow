@@ -23,6 +23,7 @@ const createProject = () => {
     if(!projects.includes(project)){
       projects.push(project);
       projectOption(project);
+      projectDisplay(project);
       errors = '';
       displayErrors(errors);
     }else{
