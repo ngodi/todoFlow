@@ -7,12 +7,7 @@ import elements from './ui/dom_elements';
 
 const todoListStorage = [];
 const projects = [];
-let message = [
-   {
-  error: '',
-  success: '',
-   }
-];
+let errors = '';
 let counter = 1;
 
 
@@ -22,16 +17,22 @@ elements.todoBtn.addEventListener('click', ()=>{
    
 });
 
-elements.newProject.addEventListener('click', ()=>{
-let project = getProjectInput();
-if(!projects.includes(project)){
-  projects.push(project);
-  message.error = '';
-  message.success = `Project with similar name exists already`;
-  displayErrors(message.success);
-}else{
- message.error = 'Project with similar name exists already';
- message.success = '';
- displayErrors(message.error);
-}
-});
+const createProject = () => {
+  elements.newProjectBtn.addEventListener('click', ()=>{
+    let project = getProjectInput();
+    if(!projects.includes(project)){
+      projects.push(project);
+      errors = '';
+      displayErrors(errors);
+    }else{
+     errors = `Project name exists already`;
+     displayErrors(errors);
+    }
+    });
+};
+
+const init = () => {
+  createProject();
+};
+
+init();
