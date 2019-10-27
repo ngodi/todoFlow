@@ -1,7 +1,7 @@
 import Todo from './models/todo'
 import uiController  from './ui/ui_control'
 import {getProjectInput, getTodoInput} from './ui/inputs'
-import {displayTodo, displayErrors, projectDisplay, projectOption} from './ui/outputs'
+import { displayErrors, projectDisplay, projectOption} from './ui/outputs'
 import elements from './ui/dom_elements';
 
 
@@ -29,13 +29,15 @@ const storeTodos = () => {
 };
 
 const displayTodos = (element) => {
-todoListStorage.filter(e => 
-  e.project == element
- ).map(item => {
-  displayTodo(item.title);
- });
-};
-
+  todoListStorage.filter(e => {
+    e.project == element
+  }).map(item => {
+   let markup ='';
+    markup +=`<li class='todoItem' id =${item.title}>${item.title}</li>`;
+  });
+  elements.todoPanel.innerHTML = markup;
+  };
+    
 
 
 const createProject = () => {
