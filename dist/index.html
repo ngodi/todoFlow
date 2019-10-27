@@ -39,13 +39,24 @@
         
             <div class="col-md-4">  
                 <!-- New project form-->
+                <div class="errors"></div>
                 <div class="projectForm row">
-                   
                   <div class="col-sm-12">
-                    <input type="text"  id="project" class="project"  placeholder="Enter new project name ..."> 
-                    <select id="selProject" class="selProject">
-                        <option>Default</option>
-                    </select> 
+                  <div class="form-group row">
+                          <div class="col-sm-12">
+                            <input type="text"  id="project" class="project"  placeholder="Enter new project name ..."> 
+                            <button type='button' class="btn btn-success" id='newProject'> Submit</button>
+                          </div>
+                      </div> 
+                      <div class="form-group row">
+                          <div class="col-sm-12">
+                           <select id="selProject" class="selProject">
+                                <option>Default</option>
+                            </select> 
+                            <label for="selProject">:Select project</label> 
+                          </div>
+                         
+                      </div> 
                   </div>   
                 </div>
                  <div class="actionPanel" id="actionPanel">
@@ -54,9 +65,9 @@
                           <div class="form-group row">
                              <label for="title" class="col-sm-3">Title</label> 
                              <div class="col-sm-8">
-                              <input type="text" class="form-control" id="title" placeholder="">
+                              <input type="text" class="form-control" id="title" required>
                              </div>
-                          </div>
+                          </div> 
                           <div class="form-group row">
                             <label for="desc" class="col-sm-3">Description</label>
                             <div class="col-sm-8">
@@ -109,10 +120,6 @@
                   <ul class="projectsPanel"  id="projectsPanel">
 
                   </ul>
-                  <div>
-                    <div class="selProjectPanel"  id="selProjectPanel"></div>
-                    <div><ol class="todoList" id="todoList"></ol></div>
-                  </div>
             </div>
            
         </div>

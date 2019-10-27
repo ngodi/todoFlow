@@ -2,11 +2,12 @@ import uiController from './ui_control'
 
 export  const elements = {
      selProject: uiController.domElementId('selProject'),
-     project: uiController.domElementId('project'),
+     newProject: uiController.domElementId('newProject'),
+     projectForm: uiController.domElementClass('projectForm'),
      actionPanel: uiController.domElementId('actionPanel'),
      projectsPanel: uiController.domElementId('projectsPanel'),
-     addTodoBtn: uiController.domElementId('addTodo'),
-     projectBtn: uiController.domElementId('projectBtn')
+     todoBtn: uiController.domElementId('todoBtn'),
+     errors: uiController.domElementClass('errors'),
 };
 
 export default elements;

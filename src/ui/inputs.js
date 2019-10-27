@@ -16,25 +16,8 @@ export const getTodoInput = () =>{
   }
 };
 
-
 export const getProjectInput = () => {
-  let proValue = elements.project.value;
-  elements.project.value = '';
+  let proValue = elements.newProject.value;
+  elements.newProject.value = '';
    return proValue;
   };
-
-  export const projectOption = (project) => {
-    let option = document.createElement('option');
-    let nodeText = document.createTextNode(project);
-    option.appendChild(nodeText);
-    uiController.domElementId('selProject').appendChild(option);
-  };
-
-  export const projectDisplay = (project) => {
-      let node = document.createElement('li');
-      node.setAttribute('class', 'projectItem');
-      let text = document.createTextNode(project);
-      node.appendChild(text);
-      elements.projectsPanel.appendChild(node);
-  };
-  

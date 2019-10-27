@@ -1,45 +1,37 @@
 import Todo from './models/todo'
 import uiController  from './ui/ui_control'
-import { projectListHeading, projectDisplay, projectOption, todoForm, getTodoInput, getProjectInput} from './ui/forms'
+import {getProjectInput, getTodoInput} from './ui/inputs'
+import {displayErrors, projectDisplay, projectOption} from './ui/outputs'
 import elements from './ui/dom_elements';
 
 
 const todoListStorage = [];
-const projects = ['Default'];
-let counter = 0;
+const projects = [];
+let message = [
+   {
+  error: '',
+  success: '',
+   }
+];
+let counter = 1;
 
-elements.addTodoBtn.addEventListener('click', ()=>{
-  todoForm(); 
- 
- uiController.domElementId('todoBtn').addEventListener('click', ()=>{
 
+elements.todoBtn.addEventListener('click', ()=>{
   const todoData = getTodoInput();
   const newTodo = new Todo(todoData.project,counter++, todoData.title, todoData.desc, todoData.dueDate, todoData.priority, todoData.notes, todoData.status);
-  todoListStorage.push(newTodo);
-  let markup1 = `<li><span>${newTodo.title}</span></li>`;
- uiController.domElementId('todoList').insertAdjacentHTML('beforeend', markup1);
- });
+   
 });
 
-uiController.domElementId('selProject').addEventListener('change',() =>{
-  let selectedProject = document.querySelector('#selProject').value;
-  uiController.domElementId('todoList').innerHTML = '';
-  //selectedProject.addClassList('active');
-  const markup = `<h3 class='sub-heading'>Tasks for ${selectedProject} - Project </h3>`;
-  uiController.domElementId('selProjectPanel').innerHTML =  markup;
- });
-
-
-elements.projectBtn.addEventListener('click', ()=>{
-
-  const project = getProjectInput();
-  if(!projects.includes(project)){
-    projects.push(project);
-    projectOption(project);
-    projectDisplay(project);
-  }
-  
+elements.newProject.addEventListener('click', ()=>{
+let project = getProjectInput();
+if(!projects.includes(project)){
+  projects.push(project);
+  message.error = '';
+  message.success = `Project with similar name exists already`;
+  displayErrors(message.success);
+}else{
+ message.error = 'Project with similar name exists already';
+ message.success = '';
+ displayErrors(message.error);
+}
 });
-
-
-projectListHeading();
