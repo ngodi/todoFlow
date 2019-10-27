@@ -11,11 +11,15 @@ let errors = '';
 let counter = 1;
 
 
-elements.todoBtn.addEventListener('click', ()=>{
-  const todoData = getTodoInput();
-  const newTodo = new Todo(todoData.project,counter++, todoData.title, todoData.desc, todoData.dueDate, todoData.priority, todoData.notes, todoData.status);
+const displayProjects = () => {
+  elements.todoBtn.addEventListener('click', ()=>{
+    const todoData = getTodoInput();
+    const newTodo = new Todo(todoData.project,counter++, todoData.title, todoData.desc, todoData.dueDate, todoData.priority, todoData.notes, todoData.status);
+    todoListStorage.push(newTodo);
+    
    
-});
+  });
+};
 
 const createProject = () => {
   elements.newProjectBtn.addEventListener('click', ()=>{
@@ -24,6 +28,9 @@ const createProject = () => {
       projects.push(project);
       projectOption(project);
       projectDisplay(project);
+      uiController.domElementId(project).addEventListener('click', ()=>{
+        alert(project);
+      });
       errors = '';
       displayErrors(errors);
     }else{
@@ -35,6 +42,7 @@ const createProject = () => {
 
 const init = () => {
   createProject();
+  displayProjects();
 };
 
 init();

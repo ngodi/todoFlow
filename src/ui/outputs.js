@@ -11,6 +11,7 @@ import elements from './dom_elements';
   export const projectDisplay = (project) => {
       let node = document.createElement('li');
       node.setAttribute('class', 'projectItem');
+      node.setAttribute('id', project);
       let text = document.createTextNode(project);
       node.appendChild(text);
       elements.projectsPanel.appendChild(node);
