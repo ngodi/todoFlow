@@ -10,6 +10,7 @@ export  const elements = {
      todoPanel: uiController.domElementId('todoPanel'),
      projectHeading: uiController.domElementClass('projectHeading'),
      detailsPanel: uiController.domElementId('detailsPanel'),
+     detailsHeading: uiController.domElementId('detailsHeading'),
 };
 
 export default elements;

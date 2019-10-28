@@ -38,7 +38,9 @@ const todosByProject = (element) => {
   }).map(item => {
     
     projectDisplay(item.title);
+ 
   uiController.domElementId(item.title).addEventListener('click', ()=> {
+    detailsHeading.innerHTML = `${item.title} information`;
     elements.detailsPanel.innerHTML = '';
     todoDisplay('Title', item.title);
     todoDisplay('Description', item.description);
