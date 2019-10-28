@@ -16,7 +16,7 @@ import elements from './dom_elements';
       node.setAttribute('id', project);
       let text = document.createTextNode(project);
       node.appendChild(text);
-      elements.projectsPanel.appendChild(node);
+      elements.todoPanel.appendChild(node);
   };
 
   export const displayErrors = (error) => {
@@ -24,6 +24,7 @@ import elements from './dom_elements';
   };
 
   export const showProjectHeading = (project) => {
-   elements.projectHeading.innerHTML = `${project} - Project`
+   elements.projectHeading.innerHTML = `${project} - Project`;
+   elements.todoBtn.innerHTML = `+ Add to ${project} Project`;
   };
  

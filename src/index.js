@@ -10,23 +10,35 @@ const projects = [];
 let errors = '';
 let counter = 1;
 
+elements.todoBtn.addEventListener('click', ()=>{
+  storeTodos();
+ todosByProject(getProjectHeading());
+});
 
-const storeTodos = () => {
-  elements.todoBtn.addEventListener('click', ()=>{
-    const todoData = getTodoInput();
-    const newTodo = new Todo(todoData.project,counter++, todoData.title, todoData.desc, todoData.dueDate, todoData.priority, todoData.notes, todoData.status);
-    todoListStorage.push(newTodo);
-  });
+
+ const storeTodos = () => {
+  const todoData = getTodoInput();
+  if(todoData.title.length > 0){
+  const newTodo = new Todo(todoData.project,counter++, todoData.title, todoData.desc, todoData.dueDate, todoData.priority, todoData.notes, todoData.status);
+  todoListStorage.push(newTodo);
+  
+  errors = '';
+  displayErrors(errors);
+  }else{
+    errors = 'Title cannot be empty';
+    displayErrors(errors);
+  }
+ 
 };
 
-const displayTodos = (element) => {
+const todosByProject = (element) => {
+  elements.todoPanel.innerHTML = '';
   todoListStorage.filter(e => {
-    e.project == element
+  return e.project == element
   }).map(item => {
-   let markup ='';
-    markup +=`<li class='todoItem' id =${item.title}>${item.title}</li>`;
+    projectDisplay(item.title);
   });
-  elements.todoPanel.innerHTML = markup;
+
   };
     
 
@@ -37,12 +49,6 @@ const createProject = () => {
     if(!projects.includes(project)){
       projects.push(project);
         projectOption(project);
-        //projectDisplay(project);
-     /*    uiController.domElementId(project).addEventListener('click', ()=>{
-        displayTodos(project);
-      }); */
-      
-      
       errors = '';
       displayErrors(errors);
     }else{
@@ -54,12 +60,11 @@ const createProject = () => {
 
 elements.selProject.addEventListener('change', ()=>{
   showProjectHeading(getProjectHeading());
+  todosByProject(getProjectHeading());
  });
+
 const init = () => {
   createProject();
-  storeTodos();
-  
-  
 };
 
 init();
