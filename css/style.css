@@ -96,13 +96,18 @@
     overflow: hidden;
 }
 .todoItem{
+    list-style-type: circle;
     border: 1px solid black;
     background: lightgreen;
     padding: 5px;
-    margin: 10px auto;
-    width: 95%;
-    height: 100px;
+    margin: 10px 2px;
+    width: 45%;
+    height: 80px;
     box-shadow: 2px 4px 4px lightgray;
+}
+.detailsPanel{
+    display:flex;
+    flex-wrap: wrap;
 }
 
 .todoPanel{
@@ -117,6 +122,7 @@
 .projectItem:hover{
 transform: scale(1.05);
 cursor: pointer;
+background: lightgreen;
 }
 
 .sub-heading{
@@ -130,7 +136,9 @@ cursor: pointer;
     box-shadow: 2px 4px 4px lightgray;
 }
 .active{
-    background-color: skyblue;
+    background-color:  lightgreen;
+    text-align: center;
+    padding: 5px;
 }
 .errors{
     color: red;
