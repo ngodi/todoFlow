@@ -60,14 +60,14 @@
 }
 
 .newProject{
-    width: 70%;
+    width: 80%;
     margin-right: 20px;
     border-radius: 8px;
     height: 30px;
 }
 
 .selProject{
-    width: 300px;
+    width: 80%;
     height: 30px;
     border-radius: 5px;
 }
@@ -108,16 +108,10 @@
     padding: 10px; 
     margin: 10px auto;
     border-radius: 5px;
-    height: 800px;
+    height: 500px;
     overflow: scroll;
 }
-.projectsPanel{
-    border: 1px solid orange;
-    height: 800px;
-    padding: 10px 20px; 
-    margin: 10px auto;
-    overflow: scroll;
-}
+
 .projectItem:hover{
 transform: scale(1.05);
 cursor: pointer;
