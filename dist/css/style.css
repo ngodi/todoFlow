@@ -96,18 +96,17 @@
     overflow: hidden;
 }
 .todoItem{
-    list-style-type: circle;
-    border: 1px solid black;
-    background: lightgreen;
+    border-radius: 5px;
+    color: rgb(179, 53, 72);
     padding: 5px;
-    margin: 10px 2px;
-    width: 45%;
-    height: 80px;
-    box-shadow: 2px 4px 4px lightgray;
+    width: 90%;
+    height: 100%;
+    font-family: 'Times New Roman', Times, serif;
 }
 .detailsPanel{
-    display:flex;
-    flex-wrap: wrap;
+    border: 1px solid skyblue;
+    border-radius: 5px;
+    box-shadow: 2px 4px 4px lightgray;
 }
 
 .todoPanel{
@@ -115,7 +114,7 @@
     padding: 10px; 
     margin: 10px auto;
     border-radius: 5px;
-    height: 500px;
+    height: 400px;
     overflow: scroll;
 }
 
@@ -142,4 +141,8 @@ background: lightgreen;
 }
 .errors{
     color: red;
+}
+
+.center-text{
+    text-align: center;
 }

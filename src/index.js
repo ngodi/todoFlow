@@ -42,14 +42,9 @@ const todosByProject = (element) => {
   uiController.domElementId(item.title).addEventListener('click', ()=> {
     detailsHeading.innerHTML = `${item.title} information`;
     elements.detailsPanel.innerHTML = '';
-    todoDisplay('Title', item.title);
-    todoDisplay('Description', item.description);
-    todoDisplay('Due Date', item.dueDate);
-    todoDisplay('Priority', item.priority);
-    todoDisplay('Status', item.status);
-    todoDisplay('Notes', item.notes);
-  });  
-  });
+    todoDisplay(item);
+    });  
+   });
 
   };
     

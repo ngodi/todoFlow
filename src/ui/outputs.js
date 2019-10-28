@@ -21,13 +21,21 @@ import elements from './dom_elements';
       elements.todoPanel.appendChild(node);
   };
 
-  export const todoDisplay = (prop, todo) => {
-    let node = document.createElement('li');
-    node.setAttribute('class', 'todoItem');
-    node.setAttribute('id',todo);
-    let text = document.createTextNode(`${prop}: ${todo}`);
-    node.appendChild(text);
-    elements.detailsPanel.appendChild(node);
+  export const todoDisplay = (todo) => {
+    let markup = `<div class='col-md-12'>
+                    <div class='row'>
+                      <div class='col-md-12 todoItem'>
+                        <p>STATUS: ${todo.status}</p>
+                        <p>PRIORITY: ${todo.priority}</p>
+                        <p>DUE DATE: ${todo.dueDate}</p>
+                    </div>
+                    <div class='col-md-12 todoItem'>
+                      <p class='center-text'>TASK DESCRIPTION</p>
+                      <p>${todo.description}</p>
+                      </div>
+                    </div>
+                 </div>`;
+    elements.detailsPanel.innerHTML = markup;
   };
 
   export const displayErrors = (error) => {

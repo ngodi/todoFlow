@@ -8,10 +8,9 @@ export const getTodoInput = () =>{
   let dueDate = uiController.domElementId('date').value;
   let priority = uiController.domElementId('priority').value;
   let status = uiController.domElementId('status').value;
-  let notes = uiController.domElementId('notes').value;
 
   return {
-    project, title, desc, dueDate, priority, status, notes
+    project, title, desc, dueDate, priority, status
   }
 };
 
