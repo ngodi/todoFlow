@@ -1,7 +1,7 @@
 import Todo from './models/todo'
 import uiController  from './ui/ui_control'
-import {getProjectInput, getTodoInput} from './ui/inputs'
-import { displayErrors, projectDisplay, projectOption} from './ui/outputs'
+import {getProjectHeading, getProjectInput, getTodoInput} from './ui/inputs'
+import {showProjectHeading, displayErrors, projectDisplay, projectOption} from './ui/outputs'
 import elements from './ui/dom_elements';
 
 
@@ -16,15 +16,6 @@ const storeTodos = () => {
     const todoData = getTodoInput();
     const newTodo = new Todo(todoData.project,counter++, todoData.title, todoData.desc, todoData.dueDate, todoData.priority, todoData.notes, todoData.status);
     todoListStorage.push(newTodo);
-   if(newTodo.project == 'Default'){
-    if(!projects.includes(newTodo.project)){
-      projects.push(newTodo.project);
-     projectDisplay(newTodo.project);
-  }
-    uiController.domElementId(newTodo.project).addEventListener('click', ()=>{
-      displayTodos(newTodo.project);
-    });
-   }
   });
 };
 
@@ -45,13 +36,12 @@ const createProject = () => {
     let project = getProjectInput();
     if(!projects.includes(project)){
       projects.push(project);
-      if(project != 'Default'){
         projectOption(project);
-        projectDisplay(project);
-        uiController.domElementId(project).addEventListener('click', ()=>{
+        //projectDisplay(project);
+     /*    uiController.domElementId(project).addEventListener('click', ()=>{
         displayTodos(project);
-      });
-      }
+      }); */
+      
       
       errors = '';
       displayErrors(errors);
@@ -62,9 +52,14 @@ const createProject = () => {
     });
 };
 
+elements.selProject.addEventListener('change', ()=>{
+  showProjectHeading(getProjectHeading());
+ });
 const init = () => {
   createProject();
   storeTodos();
+  
+  
 };
 
 init();

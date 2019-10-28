@@ -2,10 +2,12 @@ import uiController from './ui_control';
 import elements from './dom_elements';
 
   export const projectOption = (project) => {
-    let option = document.createElement('option');
+    let p = document.createElement('option');
+    p.setAttribute('class', 'projectItem');
+   p.setAttribute('id', project);
     let nodeText = document.createTextNode(project);
-    option.appendChild(nodeText);
-    elements.selProject.appendChild(option);
+    p.appendChild(nodeText);
+    elements.selProject.appendChild(p);
   };
 
   export const projectDisplay = (project) => {
@@ -21,4 +23,7 @@ import elements from './dom_elements';
    elements.errors.innerHTML = error;
   };
 
+  export const showProjectHeading = (project) => {
+   elements.projectHeading.innerHTML = `${project} - Project`
+  };
  

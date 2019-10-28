@@ -59,13 +59,18 @@
     
 }
 
-.newProject, .selProject{
+.newProject{
     width: 70%;
     margin-right: 20px;
     border-radius: 8px;
     height: 30px;
 }
 
+.selProject{
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+}
 .todoForm{
     background-color: rgba(135, 207, 235, 0.644);
     padding: 10px;
@@ -81,7 +86,6 @@
 }
 
 .projectItem{
-    list-style-type: none;
     border: 1px solid skyblue;
     padding: 5px;
     margin: 10px 0;

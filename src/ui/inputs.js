@@ -2,7 +2,7 @@ import uiController from './ui_control';
 import elements from './dom_elements';
 
 export const getTodoInput = () =>{
-  let project = (uiController.domElementId('selProject').value == 'Select project')? 'Default': uiController.domElementId('selProject').value;
+  let project = uiController.domElementId('selProject').value;
   let title = uiController.domElementId('title').value;
   let desc = uiController.domElementId('desc').value;
   let dueDate = uiController.domElementId('date').value;
@@ -17,7 +17,10 @@ export const getTodoInput = () =>{
 
 export const getProjectInput = () => {
   let proValue = elements.newProject.value;
-  proValue = (proValue.length == 0)? 'Default' : proValue;
   elements.newProject.value = '';
    return proValue;
   };
+
+export const getProjectHeading = () => {
+ return uiController.domElementId('selProject').value;
+};
