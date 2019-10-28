@@ -10,13 +10,24 @@ import elements from './dom_elements';
     elements.selProject.appendChild(p);
   };
 
+
   export const projectDisplay = (project) => {
       let node = document.createElement('li');
       node.setAttribute('class', 'projectItem');
       node.setAttribute('id', project);
+  
       let text = document.createTextNode(project);
       node.appendChild(text);
       elements.todoPanel.appendChild(node);
+  };
+
+  export const todoDisplay = (prop, todo) => {
+    let node = document.createElement('li');
+    node.setAttribute('class', 'todoItem');
+    node.setAttribute('id',todo);
+    let text = document.createTextNode(`${prop}: ${todo}`);
+    node.appendChild(text);
+    elements.detailsPanel.appendChild(node);
   };
 
   export const displayErrors = (error) => {

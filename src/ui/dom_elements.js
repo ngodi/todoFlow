@@ -9,6 +9,7 @@ export  const elements = {
      errors: uiController.domElementClass('errors'),
      todoPanel: uiController.domElementId('todoPanel'),
      projectHeading: uiController.domElementClass('projectHeading'),
+     detailsPanel: uiController.domElementId('detailsPanel'),
 };
 
 export default elements;

@@ -1,7 +1,7 @@
 import Todo from './models/todo'
 import uiController  from './ui/ui_control'
 import {getProjectHeading, getProjectInput, getTodoInput} from './ui/inputs'
-import {showProjectHeading, displayErrors, projectDisplay, projectOption} from './ui/outputs'
+import {todoDisplay, showProjectHeading, displayErrors, projectDisplay, projectOption} from './ui/outputs'
 import elements from './ui/dom_elements';
 
 
@@ -36,7 +36,17 @@ const todosByProject = (element) => {
   todoListStorage.filter(e => {
   return e.project == element
   }).map(item => {
+    
     projectDisplay(item.title);
+  uiController.domElementId(item.title).addEventListener('click', ()=> {
+    elements.detailsPanel.innerHTML = '';
+    todoDisplay('Title', item.title);
+    todoDisplay('Description', item.description);
+    todoDisplay('Due Date', item.dueDate);
+    todoDisplay('Priority', item.priority);
+    todoDisplay('Status', item.status);
+    todoDisplay('Notes', item.notes);
+  });  
   });
 
   };
