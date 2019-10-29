@@ -87,7 +87,7 @@
 
 .projectItem{
     border: 1px solid skyblue;
-    padding: 5px;
+    padding: 10px;
     margin: 10px 0;
     width: 95%;
     border-radius: 5px;
@@ -103,17 +103,30 @@
     height: 100%;
     font-family: 'Times New Roman', Times, serif;
 }
-.detailsPanel{
-    border: 1px solid skyblue;
+.blue-back{
     border-radius: 5px;
-    box-shadow: 2px 4px 4px lightgray;
+    background: skyblue;
+    padding: 10px;
+}
+.red-back{
+    border-radius: 5px;
+    background: red;  
+    padding: 10px;
+}
+.white-back{
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid skyblue;
+}
+.detailsPanel{
+    height: 400px;
+    overflow: scroll;
 }
 
 .todoPanel{
-    border: 1px solid skyblue;
+
     padding: 10px; 
     margin: 10px auto;
-    border-radius: 5px;
     height: 400px;
     overflow: scroll;
 }
