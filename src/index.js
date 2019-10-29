@@ -1,5 +1,5 @@
 import Todo from './models/todo'
-import uiController  from './ui/ui_control'
+import dom  from './ui/dom'
 import {getProjectHeading, getProjectInput, getTodoInput} from './ui/inputs'
 import {todoDisplay, showProjectHeading, displayErrors, projectDisplay, projectOption} from './ui/outputs'
 import elements from './ui/dom_elements';
@@ -8,7 +8,6 @@ import elements from './ui/dom_elements';
 const todoListStorage = [];
 const projects = [];
 let errors = '';
-let counter = 1;
 
 elements.todoBtn.addEventListener('click', ()=>{
   storeTodos();
@@ -19,7 +18,7 @@ elements.todoBtn.addEventListener('click', ()=>{
  const storeTodos = () => {
   const todoData = getTodoInput();
   if(todoData.title.length > 0){
-  const newTodo = new Todo(todoData.project,counter++, todoData.title, todoData.desc, todoData.dueDate, todoData.priority, todoData.notes, todoData.status);
+  const newTodo = new Todo(todoData.project, todoData.title, todoData.desc, todoData.dueDate, todoData.priority, todoData.notes, todoData.status);
   todoListStorage.push(newTodo);
   
   errors = '';
@@ -39,8 +38,8 @@ const todosByProject = (element) => {
     
     projectDisplay(item.title);
  
-  uiController.domElementId(item.title).addEventListener('click', ()=> {
-    detailsHeading.innerHTML = `${item.title} information`;
+  dom.domElementId(item.title).addEventListener('click', ()=> {
+    elements.detailsHeading.innerHTML = `About ${item.title}`;
     elements.detailsPanel.innerHTML = '';
     todoDisplay(item);
     });  

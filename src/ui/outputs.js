@@ -1,4 +1,4 @@
-import uiController from './ui_control';
+import dom from './dom';
 import elements from './dom_elements';
 
   export const projectOption = (project) => {
@@ -25,12 +25,12 @@ import elements from './dom_elements';
     let markup = `<div class='col-md-12'>
                     <div class='row'>
                       <div class='col-md-12 todoItem'>
-                        <p>STATUS: ${todo.status}</p>
-                        <p>PRIORITY: ${todo.priority}</p>
-                        <p>DUE DATE: ${todo.dueDate}</p>
+                        <p class='blue-back'>STATUS: ${todo.status}</p>
+                        <p class='blue-back'>PRIORITY: ${todo.priority}</p>
+                        <p class='white-back'>DUE DATE: ${todo.dueDate}</p>
                     </div>
                     <div class='col-md-12 todoItem'>
-                      <p class='center-text'>TASK DESCRIPTION</p>
+                      <p class='center-text blue-back'>TASK DESCRIPTION</p>
                       <p>${todo.description}</p>
                       </div>
                     </div>
@@ -43,7 +43,7 @@ import elements from './dom_elements';
   };
 
   export const showProjectHeading = (project) => {
-   elements.projectHeading.innerHTML = `${project} - Project`;
+   elements.projectHeading.innerHTML = `${project} - Project Todo List`;
    elements.todoBtn.innerHTML = `+ Add to ${project} Project`;
   };
  

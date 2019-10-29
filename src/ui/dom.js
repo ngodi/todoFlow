@@ -1,6 +1,6 @@
 import Todo from '../models/todo'
 
-const uiController = (() => {
+const dom = (() => {
     const addNode = element => document.createElement(element);
 
     const addAttribute = (element, property, value) => {
@@ -33,4 +33,4 @@ const uiController = (() => {
     return { addNode, addAttribute, domElementId, domElementClass, addText, appendToNode, replaceNode, appendToDom,}
 })();
 
-export default uiController;
+export default dom;

@@ -1,13 +1,13 @@
-import uiController from './ui_control';
+import dom from './dom';
 import elements from './dom_elements';
 
 export const getTodoInput = () =>{
-  let project = uiController.domElementId('selProject').value;
-  let title = uiController.domElementId('title').value;
-  let desc = uiController.domElementId('desc').value;
-  let dueDate = uiController.domElementId('date').value;
-  let priority = uiController.domElementId('priority').value;
-  let status = uiController.domElementId('status').value;
+  let project = elements.selProject.value;
+  let title = elements.title.value;
+  let desc = elements.desc.value;
+  let dueDate = elements.dueDate.value;
+  let priority = elements.priority.value;
+  let status = elements.status.value;
 
   return {
     project, title, desc, dueDate, priority, status
@@ -21,5 +21,5 @@ export const getProjectInput = () => {
   };
 
 export const getProjectHeading = () => {
- return uiController.domElementId('selProject').value;
+ return elements.selProject.value;
 };
