@@ -1,7 +1,7 @@
 import Todo from './models/todo'
 import dom  from './ui/dom'
 import {getProjectHeading, getProjectInput, getTodoInput} from './ui/inputs'
-import {todoDisplay, showProjectHeading, displayErrors, projectDisplay, projectOption} from './ui/outputs'
+import {displayProjects, todoDisplay, showProjectHeading, displayErrors, projectDisplay, projectOption} from './ui/outputs'
 import elements from './ui/dom_elements';
 
 
@@ -52,13 +52,14 @@ const todosByProject = (element) => {
 const createProject = () => {
   elements.newProjectBtn.addEventListener('click', ()=>{
     let project = getProjectInput();
-    if(!projects.includes(project)){
+    if(!projects.includes(project) && project.length != 0){
       projects.push(project);
         projectOption(project);
+        displayProjects(project);
       errors = '';
       displayErrors(errors);
     }else{
-     errors = `Project name exists already`;
+     errors = `Project exists already`;
      displayErrors(errors);
     }
     });

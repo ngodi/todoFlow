@@ -47,3 +47,6 @@ import elements from './dom_elements';
    elements.todoBtn.innerHTML = `+ Add to ${project} Project`;
   };
  
+  export const displayProjects = (project) => {
+    document.getElementById("projects-section").insertAdjacentHTML('afterbegin', `<p>${project}</p>`);
+  };
