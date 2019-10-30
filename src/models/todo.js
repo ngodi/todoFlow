@@ -13,8 +13,13 @@ export default class Todo{
       localSorage.setItem('todos', JSON.stringify(current));
   };
 
-  /* validateTodo = (todo, current) => {
-     
-  } */
-};
+  validateTodo = (todo, current) => {
+     if(current.includes(todo)){
+       return true;
+     }else{
+       return false;
+     }
 
+ };
+
+}
