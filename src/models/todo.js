@@ -9,15 +9,16 @@ export default class Todo{
   }
   storeTodo = (todo) => {
       const current = JSON.parse(localStorage.getItem("todos")) || [];
+     if(this.validateTodo(todo))
       current.push(todo);
       localSorage.setItem('todos', JSON.stringify(current));
   };
 
-  validateTodo = (todo, current) => {
+  validateTodo = (todo) => {
      if(current.includes(todo)){
-       return true;
-     }else{
        return false;
+     }else{
+       return true;
      }
 
  };
