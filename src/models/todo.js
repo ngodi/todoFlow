@@ -7,6 +7,14 @@ export default class Todo{
       this.priority = priority;
       this.status = status;
   }
+  storeTodo = (todo) => {
+      const current = JSON.parse(localStorage.getItem("todos")) || [];
+      current.push(todo);
+      localSorage.setItem('todos', JSON.stringify(current));
+  };
 
+  /* validateTodo = (todo, current) => {
+     
+  } */
 };
 
