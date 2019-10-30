@@ -7,5 +7,6 @@ export default class Todo{
       this.priority = priority;
       this.status = status;
   }
-}
+
+};
 
