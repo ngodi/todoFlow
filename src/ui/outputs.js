@@ -16,7 +16,7 @@ export const setDropdown = () => {
   }));
 };
 
-  export const projectDisplay = (project) => {
+  export const todoDisplay = (project) => {
       let node = document.createElement('li');
       node.setAttribute('class', 'projectItem');
       node.setAttribute('id', project);
@@ -26,7 +26,7 @@ export const setDropdown = () => {
       elements.todoPanel.appendChild(node);
   };
 
-  export const todoDisplay = (todo) => {
+  export const detailsDisplay = (todo) => {
     let markup = `<div class='col-md-12'>
                     <div class='row'>
                       <div class='col-md-12 todoItem'>
@@ -49,6 +49,6 @@ export const setDropdown = () => {
 
   export const showProjectHeading = (project) => {
    elements.projectHeading.innerHTML = `${project} - Project Todo List`;
-   //elements.todoBtn.innerHTML = `+ Add to ${project} Project`;
+   elements.todoBtn.innerHTML = `+ Add to ${project} Project`;
   };
  

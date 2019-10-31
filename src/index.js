@@ -1,26 +1,31 @@
 import Todo from './models/todo'
 import dom  from './ui/dom'
 import {getProjectHeading, getProjectInput, getTodoInput} from './ui/inputs'
-import {setDropdown, todoDisplay, showProjectHeading, displayErrors, projectDisplay, projectOption} from './ui/outputs'
+import {setDropdown, todoDisplay, showProjectHeading, displayErrors,detailsDisplay, projectOption} from './ui/outputs'
 import elements from './ui/dom_elements';
 
 let errors = '';
+let currentTodos = (JSON.parse(localStorage.getItem('todos')))? JSON.parse(localStorage.getItem('todos')) : [];
+let projects = (JSON.parse(localStorage.getItem('projects')))? JSON.parse(localStorage.getItem('projects')) : [];
 
 elements.todoBtn.addEventListener('click', ()=>{
   let todoData = getTodoInput();
-  let todo = Todo(todoData.project, todoData.title, todoData.desc, todoData.dueDate, todoData.priority, todoData.status);
-  let currentTodos = (JSON.parse(localStorage.getItem('todos')))? JSON.parse(localStorage.getItem('todos')) : [];
-  if(todoData.title.length > 0 && !currentTodos.includes(todo)){ 
+  let todo = new Todo(todoData.project, todoData.title, todoData.desc, todoData.dueDate, todoData.priority, todoData.status);
+  let duplicateTitle = currentTodos.filter(e => {
+           return (todo.title == e.title && todo.project == e.project)
+  });
+  
+  if(todo.title.length > 0 && duplicateTitle.length <= 0){ 
     currentTodos.push(todo);
     localStorage.setItem('todos', JSON.stringify(currentTodos));
     
     todosByProject(getProjectHeading());
-    errors = '';
-    displayErrors(errors);
+     errors = '';
+     displayErrors(errors);
     }else{
-      errors = 'Title cannot be empty';
-      displayErrors(errors);
-    } 
+     errors = 'Invalid title or title used already';
+     displayErrors(errors);
+   } 
 
 });
 
@@ -28,16 +33,16 @@ elements.todoBtn.addEventListener('click', ()=>{
 
 const todosByProject = (element) => {
   elements.todoPanel.innerHTML = '';
-  todoListStorage.filter(e => {
+  currentTodos.filter(e => {
   return e.project == element
   }).map(item => {
     
-    projectDisplay(item.title);
+   todoDisplay(item.title);
  
   dom.domElementId(item.title).addEventListener('click', ()=> {
     elements.detailsHeading.innerHTML = `About ${item.title}`;
     elements.detailsPanel.innerHTML = '';
-    todoDisplay(item);
+    detailsDisplay(item);
     });  
    });
 
@@ -47,7 +52,7 @@ const todosByProject = (element) => {
 const createProject = () => {
   elements.newProjectBtn.addEventListener('click', ()=>{
     let project = getProjectInput();
-    const projects = (JSON.parse(localStorage.getItem('projects')))? JSON.parse(localStorage.getItem('projects')) : []
+    
     if(!projects.includes(project) && project.length > 0){
       projects.push(project )
       localStorage.setItem('projects', JSON.stringify(projects));
@@ -69,6 +74,7 @@ elements.selProject.addEventListener('change', ()=>{
 const init = () => {
   createProject();
   setDropdown();
+  todosByProject('Default');
 };
 
 init(); 
