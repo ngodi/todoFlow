@@ -40,8 +40,12 @@ const todosByProject = (element) => {
    todoDisplay(item.title);
  
   dom.domElementId(item.title).addEventListener('click', ()=> {
-    elements.detailsPanel.innerHTML = '';
+    elements.detailsPanel.innerHTML = ''; 
     detailsDisplay(item);
+    dom.domElementClass('deleteBtn').addEventListener('click', () => {
+      alert('yes');
+    });
+   
     });  
 
    });

@@ -85,7 +85,7 @@
     height: 200px;
 }
 
-.projectItem{
+.todoItem{
     border: 1px solid skyblue;
     padding: 10px;
     margin: 10px 0;
@@ -94,18 +94,38 @@
     box-shadow: 2px 4px 4px lightgray;
     transition: all 0.5s;
 }
-.todoItem{
+.todoItem:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    background: lightgreen;
+    }
+
+.detailsItem{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.deleteBtn{
+    background: red;
+    position: relative;
+    left: 10px;
+}
+.deleteBtn:hover{
+cursor: pointer;
+}
+.todoDetail{
     border-radius: 5px;
     color: rgb(179, 53, 72);
     padding: 5px;
-    width: 90%;
-    height: 100%;
+    width: 70%; 
+  
     font-family: 'Times New Roman', Times, serif;
 }
 .blue-back{
     border-radius: 5px;
     background: skyblue;
-    padding: 2px;
+    padding: 5px;
+    height: 80px;
 }
 .white-back{
     border-radius: 5px;
@@ -132,11 +152,7 @@
     overflow: scroll;
 }
 
-.projectItem:hover{
-transform: scale(1.05);
-cursor: pointer;
-background: lightgreen;
-}
+
 
 .sub-heading{
     font-size: 30px;

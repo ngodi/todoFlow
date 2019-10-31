@@ -3,7 +3,7 @@ import elements from './dom_elements';
 
   export const projectOption = (project) => {
     let p = document.createElement('option');
-    p.setAttribute('class', 'projectItem');
+    p.setAttribute('class', 'todoItem');
    p.setAttribute('id', project);
     let nodeText = document.createTextNode(project);
     p.appendChild(nodeText);
@@ -16,12 +16,11 @@ export const setDropdown = () => {
   }));
 };
 
-  export const todoDisplay = (project) => {
+  export const todoDisplay = (todo) => {
       let node = document.createElement('li');
-      node.setAttribute('class', 'projectItem');
-      node.setAttribute('id', project);
-  
-      let text = document.createTextNode(project);
+      node.setAttribute('class', 'todoItem');
+      node.setAttribute('id', todo);
+      let text = document.createTextNode(todo);
       node.appendChild(text);
       elements.todoPanel.appendChild(node);
   };
@@ -29,13 +28,14 @@ export const setDropdown = () => {
   export const detailsDisplay = (todo) => {
     let markup = `<div class='col-md-12'>
                     <div class='row'>
-                      <div class='col-md-12 todoItem'>
-                        <b class='white-back'>About:  ${todo.title}</b>
+                      <div class='col-md-12 detailsItem'>
+                        <p class='blue-back'>${todo.title}<span class='deleteBtn' id='${todo.title}Delete'>X</span>
+                        </p>
                         <p class='blue-back'>STATUS: ${todo.status}</p>
                         <p class='blue-back'>PRIORITY: ${todo.priority}</p>
                         <p class='blue-back'>DUE DATE: ${todo.dueDate}</p>
                     </div>
-                    <div class='col-md-12 todoItem'>
+                    <div class='col-md-12'>
                       <p class='center-text blue-back'>TASK DESCRIPTION</p>
                       <p>${todo.description}</p>
                       </div>
@@ -49,7 +49,7 @@ export const setDropdown = () => {
   };
 
   export const showProjectHeading = (project) => {
-   elements.projectHeading.innerHTML = `${project} - Project Todo List`;
+   elements.projectHeading.innerHTML = `${project} - Project Todo List <span class='deleteBtn' id='${project}Delete'>X</span>`;
    elements.todoBtn.innerHTML = `+ Add to ${project} Project`;
   };
  
