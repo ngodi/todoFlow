@@ -40,10 +40,10 @@ const todosByProject = (element) => {
    todoDisplay(item.title);
  
   dom.domElementId(item.title).addEventListener('click', ()=> {
-    elements.detailsHeading.innerHTML = `About ${item.title}`;
     elements.detailsPanel.innerHTML = '';
     detailsDisplay(item);
     });  
+
    });
 
   };
@@ -67,6 +67,7 @@ const createProject = () => {
 };
 
 elements.selProject.addEventListener('change', ()=>{
+  elements.detailsPanel.innerHTML = '';
   showProjectHeading(getProjectHeading());
   todosByProject(getProjectHeading());
  });
