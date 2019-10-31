@@ -30,7 +30,7 @@ export const setDropdown = () => {
     let markup = `<div class='col-md-12'>
                     <div class='row'>
                       <div class='col-md-12 todoItem'>
-                        <b class='white-back'>About: ${todo.title}</b>
+                        <b class='white-back'>About:  ${todo.title}</b>
                         <p class='blue-back'>STATUS: ${todo.status}</p>
                         <p class='blue-back'>PRIORITY: ${todo.priority}</p>
                         <p class='blue-back'>DUE DATE: ${todo.dueDate}</p>
