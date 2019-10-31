@@ -102,13 +102,10 @@
 
 .detailsItem{
     display: flex;
-    justify-content: space-between;
-    
+    justify-content: space-between;  
 }
 .deleteBtn{
-    background: red;
-    position: relative;
-    left: 10px;
+  margin-left: 20px;
 }
 .deleteBtn:hover{
 cursor: pointer;
@@ -118,14 +115,12 @@ cursor: pointer;
     color: rgb(179, 53, 72);
     padding: 5px;
     width: 70%; 
-  
     font-family: 'Times New Roman', Times, serif;
 }
 .blue-back{
     border-radius: 5px;
     background: skyblue;
     padding: 5px;
-    height: 80px;
 }
 .white-back{
     border-radius: 5px;
