@@ -1,34 +1,30 @@
 import Todo from './models/todo'
 import dom  from './ui/dom'
 import {getProjectHeading, getProjectInput, getTodoInput} from './ui/inputs'
-import {displayProjects, todoDisplay, showProjectHeading, displayErrors, projectDisplay, projectOption} from './ui/outputs'
+import {setDropdown, todoDisplay, showProjectHeading, displayErrors, projectDisplay, projectOption} from './ui/outputs'
 import elements from './ui/dom_elements';
 
-
-/* const todoListStorage = [];
-const projects = [];
-let errors = ''; */
+let errors = '';
 
 elements.todoBtn.addEventListener('click', ()=>{
-  storeTodos();
- todosByProject(getProjectHeading());
+  let todoData = getTodoInput();
+  let todo = Todo(todoData.project, todoData.title, todoData.desc, todoData.dueDate, todoData.priority, todoData.status);
+  let currentTodos = (JSON.parse(localStorage.getItem('todos')))? JSON.parse(localStorage.getItem('todos')) : [];
+  if(todoData.title.length > 0 && !currentTodos.includes(todo)){ 
+    currentTodos.push(todo);
+    localStorage.setItem('todos', JSON.stringify(currentTodos));
+    
+    todosByProject(getProjectHeading());
+    errors = '';
+    displayErrors(errors);
+    }else{
+      errors = 'Title cannot be empty';
+      displayErrors(errors);
+    } 
+
 });
 
 
- const storeTodos = () => {
-  const todoData = getTodoInput();
-  /* if(todoData.title.length > 0){ */
-  const newTodo = new Todo(todoData.project, todoData.title, todoData.desc, todoData.dueDate, todoData.priority, todoData.notes, todoData.status);
-  storeTodo = (todo) 
- /*  
-  errors = '';
-  displayErrors(errors);
-  }else{
-    errors = 'Title cannot be empty';
-    displayErrors(errors);
-  } */
- 
-};
 
 const todosByProject = (element) => {
   elements.todoPanel.innerHTML = '';
@@ -46,16 +42,16 @@ const todosByProject = (element) => {
    });
 
   };
-    
 
 
 const createProject = () => {
   elements.newProjectBtn.addEventListener('click', ()=>{
     let project = getProjectInput();
-    if(!projects.includes(project) && project.length != 0){
-      projects.push(project);
+    const projects = (JSON.parse(localStorage.getItem('projects')))? JSON.parse(localStorage.getItem('projects')) : []
+    if(!projects.includes(project) && project.length > 0){
+      projects.push(project )
+      localStorage.setItem('projects', JSON.stringify(projects));
         projectOption(project);
-        displayProjects(project);
       errors = '';
       displayErrors(errors);
     }else{
@@ -72,6 +68,7 @@ elements.selProject.addEventListener('change', ()=>{
 
 const init = () => {
   createProject();
+  setDropdown();
 };
 
-init();
+init(); 

@@ -1,4 +1,4 @@
-export default class Todo{
+export  class Todo{
   constructor(project, title, description, dueDate, priority, status){
       this.project = project;
       this.title = title;
@@ -6,21 +6,5 @@ export default class Todo{
       this.dueDate = dueDate;
       this.priority = priority;
       this.status = status;
-  }
-  storeTodo = (todo) => {
-      const current = JSON.parse(localStorage.getItem("todos")) || [];
-     if(this.validateTodo(todo))
-      current.push(todo);
-      localSorage.setItem('todos', JSON.stringify(current));
   };
-
-  validateTodo = (todo) => {
-     if(current.includes(todo)){
-       return false;
-     }else{
-       return true;
-     }
-
- };
-
 }

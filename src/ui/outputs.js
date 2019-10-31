@@ -9,7 +9,12 @@ import elements from './dom_elements';
     p.appendChild(nodeText);
     elements.selProject.appendChild(p);
   };
-
+export const setDropdown = () => {
+  const projects = (JSON.parse(localStorage.getItem('projects')))? JSON.parse(localStorage.getItem('projects')) : [];
+  projects.forEach((project => {
+    projectOption(project);
+  }));
+};
 
   export const projectDisplay = (project) => {
       let node = document.createElement('li');
@@ -44,9 +49,6 @@ import elements from './dom_elements';
 
   export const showProjectHeading = (project) => {
    elements.projectHeading.innerHTML = `${project} - Project Todo List`;
-   elements.todoBtn.innerHTML = `+ Add to ${project} Project`;
+   //elements.todoBtn.innerHTML = `+ Add to ${project} Project`;
   };
  
-  export const displayProjects = (project) => {
-    document.getElementById("projects-section").insertAdjacentHTML('afterbegin', `<p>${project}</p>`);
-  };
