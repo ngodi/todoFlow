@@ -13,7 +13,7 @@
     padding-top: 20px;
 }
 .main-div{
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     padding: 20px;
 }
 .navbar{
@@ -43,7 +43,7 @@
   }
 
 .greeting{
-    padding-top: 200px;
+    padding-top: 100px;
     text-align: center;
     color: rgb(19, 167, 226); 
     font-size: 40px;
@@ -81,8 +81,8 @@
 
 .img-div{
     margin: 100px 0 0 0;
-    width: 800px;
-    height: 400px;
+    width: 400px;
+    height: 200px;
 }
 
 .projectItem{
@@ -93,7 +93,6 @@
     border-radius: 5px;
     box-shadow: 2px 4px 4px lightgray;
     transition: all 0.5s;
-    overflow: hidden;
 }
 .todoItem{
     border-radius: 5px;
@@ -106,25 +105,27 @@
 .blue-back{
     border-radius: 5px;
     background: skyblue;
-    padding: 10px;
-}
-.red-back{
-    border-radius: 5px;
-    background: red;  
-    padding: 10px;
+    padding: 2px;
 }
 .white-back{
     border-radius: 5px;
-    padding: 10px;
-    border: 1px solid skyblue;
+    padding: 2px;
 }
+
+.red-back{
+    border-radius: 5px;
+    background: red;  
+    padding: 2px;
+}
+
 .detailsPanel{
     height: 400px;
-    overflow: scroll;
+    overflow: hidden;
 }
-
+::-webkit-scrollbar { 
+    display: none; 
+}
 .todoPanel{
-
     padding: 10px; 
     margin: 10px auto;
     height: 400px;
@@ -141,7 +142,7 @@ background: lightgreen;
     font-size: 30px;
     text-align: center;
     border: 1px solid rgb(192, 106, 106);
-    background-color:rgba(255, 68, 0, 0.849);
+    background-color:gray;
     color: white;
     padding: 5px;
     margin: 10px 0;
@@ -158,16 +159,4 @@ background: lightgreen;
 
 .center-text{
     text-align: center;
-}
-.projects-section{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 50px auto;
-}
-
-.projects-section p{
-    border: 1px solid yellowgreen;
-    padding: 10px;
-    width: 100px;
-    margin-left: 5px;
 }
