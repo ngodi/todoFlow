@@ -27,24 +27,41 @@ export const setDropdown = () => {
 
   export const detailsDisplay = (todo) => {
     let markup = `<div class='col-md-12'>
-                    <div class='row'>
-                      <div class='col-md-6'>
-                        <p class='blue-back active detailsItem'>${todo.title} Details<button class='btn btn-danger btn-sm deleteBtn' id='${todo.title}Delete'>X</button>
-                        </p>   
-                        
-                      <p class='blue-back detailsItem'>STATUS: ${todo.status}<button class='btn btn-danger btn-sm deleteBtn' id='${todo.status}'>change</button></p>                     
-                      </div>
-                      <div class='col-md-6'>
-                        <p class='blue-back detailsItem'>PRIORITY: ${todo.priority}<button class='btn btn-danger btn-sm deleteBtn' id='${todo.priority}'>change</button></p>
-                        <p class='blue-back detailsItem'>DUE DATE: ${todo.dueDate}<button class='btn btn-danger btn-sm deleteBtn' id='${todo.dueDate}Delete'>change</button></p>
-                       </div>
-                    </div>
-                    <div class='row'>  
-                      <div class='col-md-12'>
-                       <p class='center-text  blue-back'>TASK DESCRIPTION</p>
-                       <p>${todo.description}<button class='btn btn-danger btn-xs deleteBtn' id='${todo.description}'>edit</button></p>
-                       </div>
-                    </div>
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">${todo.title}</th>
+        <th scope="col"></th>
+        <th scope="col"><button class='btn btn-sm btn-danger'>delete</button></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Status</th>
+        <td>${todo.status}</td>
+        <td></td>
+        <td><button class='btn btn-sm btn-success'>update</button></td>
+      </tr>
+      <tr>
+        <th scope="row">Priority</th>
+        <td>${todo.priority}</td>
+        <td></td>
+        <td><button class='btn btn-sm btn-info'>change</button></td>
+      </tr>
+      <tr>
+        <th scope="row">Due date</th>
+        <td>${todo.dueDate}</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">Description</th>
+        <td colspan="2">${todo.description}</td>
+        <td><button class='btn btn-sm btn-info'>edit</button></td>
+      </tr>
+    </tbody>
+  </table>
                   </div>`;
     elements.detailsPanel.innerHTML = markup;
   };
