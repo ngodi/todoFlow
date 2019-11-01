@@ -33,7 +33,7 @@ export const setDropdown = () => {
         <th scope="col">Title</th>
         <th scope="col">${todo.title}</th>
         <th scope="col"></th>
-        <th scope="col"><button class='btn btn-sm btn-danger'>delete</button></th>
+        <th scope="col"><button class='btn btn-sm btn-danger' id='${todo.id}'>delete</button></th>
       </tr>
     </thead>
     <tbody>
@@ -71,7 +71,7 @@ export const setDropdown = () => {
   };
 
   export const showProjectHeading = (project) => {
-   elements.projectHeading.innerHTML = `${project} - Project Todo List <button class='btn btn-danger btn-xs deleteBtn' id='${project}Delete'>Delete</button>`;
+   elements.projectHeading.innerHTML = `${project} - Project Todo List `;
    elements.todoBtn.innerHTML = `+ Add to ${project} Project`;
   };
  

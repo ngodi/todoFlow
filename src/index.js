@@ -4,13 +4,14 @@ import {getProjectHeading, getProjectInput, getTodoInput} from './ui/inputs'
 import {setDropdown, todoDisplay, showProjectHeading, displayErrors,detailsDisplay, projectOption} from './ui/outputs'
 import elements from './ui/dom_elements';
 
+let counter = 0;
 let errors = '';
 let currentTodos = (JSON.parse(localStorage.getItem('todos')))? JSON.parse(localStorage.getItem('todos')) : [];
 let projects = (JSON.parse(localStorage.getItem('projects')))? JSON.parse(localStorage.getItem('projects')) : [];
 
 elements.todoBtn.addEventListener('click', ()=>{
   let todoData = getTodoInput();
-  let todo = new Todo(todoData.project, todoData.title, todoData.desc, todoData.dueDate, todoData.priority, todoData.status);
+  let todo = new Todo(counter++, todoData.project, todoData.title, todoData.desc, todoData.dueDate, todoData.priority, todoData.status);
   let duplicateTitle = currentTodos.filter(e => {
            return (todo.title == e.title && todo.project == e.project)
   });
@@ -42,8 +43,10 @@ const todosByProject = (element) => {
   dom.domElementId(item.title).addEventListener('click', ()=> {
     elements.detailsPanel.innerHTML = ''; 
     detailsDisplay(item);
-    dom.domElementClass('deleteBtn').addEventListener('click', () => {
-      alert('yes');
+    dom.domElementId(item.id).addEventListener('click', () => {
+      currentTodos.splice(currentTodos.indexOf(item), 1);
+      deleteTodo(item);
+      elements.detailsPanel.innerHTML = ''; 
     });
    
     });  
@@ -51,7 +54,10 @@ const todosByProject = (element) => {
    });
 
   };
-
+const deleteTodo = (item) => {
+  currentTodos.splice(currentTodos.indexOf(item), 1);
+  localStorage.setItem('todos', JSON.stringify(currentTodos));
+};
 
 const createProject = () => {
   elements.newProjectBtn.addEventListener('click', ()=>{
