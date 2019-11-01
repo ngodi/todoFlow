@@ -47,7 +47,7 @@ export const setDropdown = () => {
         <th scope="row">Priority</th>
         <td id='changePriority'>${todo.priority}</td>
         <td></td>
-        <td><button class='btn btn-sm btn-info'>change</button></td>
+        <td><button class='btn btn-sm btn-info' id='priorityBtn'>change</button></td>
       </tr>
       <tr>
         <th scope="row">Due date</th>

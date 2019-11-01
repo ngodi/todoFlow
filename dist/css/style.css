@@ -133,6 +133,10 @@ cursor: pointer;
     padding: 2px;
 }
 
+.border-red{
+    border: 1px dotted red;
+}
+
 .detailsPanel{
     height: 400px;
     overflow: hidden;

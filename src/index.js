@@ -44,7 +44,12 @@ const todosByProject = (element) => {
   }else{
     dom.domElementId(item.title).classList.remove('active');
   }
- 
+  if(item.priority == 'High'){
+    dom.domElementId(item.title).classList.add('border-red');
+  }else{
+    dom.domElementId(item.title).classList.remove('border-red');
+  }
+
   dom.domElementId(item.title).addEventListener('click', ()=> {
     elements.detailsPanel.innerHTML = ''; 
     detailsDisplay(item);
@@ -57,15 +62,27 @@ const todosByProject = (element) => {
    dom.domElementId('statusBtn').addEventListener('click', ()=> {
     changeStatus(item);
     });
+    dom.domElementId('priorityBtn').addEventListener('click', ()=> {
+      changePriority(item);
+      });
     });  
 
    });
 
   };
-const changeStatus = (item) => {
+const changeStatus = (todo) => {
   let newStatus = dom.domElementId('changeStatus').innerHTML;
   newStatus = (newStatus == 'Pending')? 'Completed': 'Pending';
-  currentTodos[currentTodos.indexOf(item)].status = newStatus;
+  currentTodos[currentTodos.indexOf(todo)].status = newStatus;
+  localStorage.setItem('todos', JSON.stringify(currentTodos));
+  elements.detailsPanel.innerHTML = ''; 
+  todosByProject(getProjectHeading());
+};
+
+const changePriority = (todo) => {
+  let newPriority = dom.domElementId('changePriority').innerHTML;
+  newPriority = (newPriority == 'Low')? 'High': 'Low';
+  currentTodos[currentTodos.indexOf(todo)].priority = newPriority;
   localStorage.setItem('todos', JSON.stringify(currentTodos));
   elements.detailsPanel.innerHTML = ''; 
   todosByProject(getProjectHeading());
