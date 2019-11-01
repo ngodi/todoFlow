@@ -58,7 +58,7 @@ export const setDropdown = () => {
       <tr>
         <th scope="row">Description</th>
         <td id='changeDescription' colspan="2">${todo.description}</td>
-        <td><button class='btn btn-sm btn-info'>edit</button></td>
+        <td><button class='btn btn-sm btn-info' id='editBtn'>edit</button></td>
       </tr>
     </tbody>
   </table>

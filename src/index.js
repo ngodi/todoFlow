@@ -65,6 +65,18 @@ const todosByProject = (element) => {
     dom.domElementId('priorityBtn').addEventListener('click', ()=> {
       changePriority(item);
       });
+   dom.domElementId('editBtn').addEventListener('click', ()=> {
+    dom.domElementId('changeDescription').innerHTML = `<input type="text" id='newDescription' value='${item.description}' class="form-control">
+    <button class='btn btn-sm btn-info' id='newEditBtn'>save</button>`;
+    dom.domElementId('newEditBtn').addEventListener('click', ()=> {
+
+      let newDesc = dom.domElementId('newDescription').value; 
+      currentTodos[currentTodos.indexOf(item)].description = newDesc;
+      localStorage.setItem('todos', JSON.stringify(currentTodos));
+      elements.detailsPanel.innerHTML = ''; 
+      todosByProject(getProjectHeading());  
+        });
+     });
     });  
 
    });
