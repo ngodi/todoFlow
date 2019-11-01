@@ -39,13 +39,13 @@ export const setDropdown = () => {
     <tbody>
       <tr>
         <th scope="row">Status</th>
-        <td>${todo.status}</td>
+        <td id='changeStatus'>${todo.status}</td>
         <td></td>
-        <td><button class='btn btn-sm btn-success'>update</button></td>
+        <td><button class='btn btn-sm btn-info' id='statusBtn'>change</button></td>
       </tr>
       <tr>
         <th scope="row">Priority</th>
-        <td>${todo.priority}</td>
+        <td id='changePriority'>${todo.priority}</td>
         <td></td>
         <td><button class='btn btn-sm btn-info'>change</button></td>
       </tr>
@@ -57,7 +57,7 @@ export const setDropdown = () => {
       </tr>
       <tr>
         <th scope="row">Description</th>
-        <td colspan="2">${todo.description}</td>
+        <td id='changeDescription' colspan="2">${todo.description}</td>
         <td><button class='btn btn-sm btn-info'>edit</button></td>
       </tr>
     </tbody>

@@ -39,21 +39,38 @@ const todosByProject = (element) => {
   }).map(item => {
     
    todoDisplay(item.title);
+   if(item.status == 'Completed'){
+    dom.domElementId(item.title).classList.add('active');
+  }else{
+    dom.domElementId(item.title).classList.remove('active');
+  }
  
   dom.domElementId(item.title).addEventListener('click', ()=> {
     elements.detailsPanel.innerHTML = ''; 
     detailsDisplay(item);
+
     dom.domElementId(item.id).addEventListener('click', () => {
-      currentTodos.splice(currentTodos.indexOf(item), 1);
       deleteTodo(item);
+      todosByProject(getProjectHeading());
       elements.detailsPanel.innerHTML = ''; 
     });
-   
+   dom.domElementId('statusBtn').addEventListener('click', ()=> {
+    changeStatus(item);
+    });
     });  
 
    });
 
   };
+const changeStatus = (item) => {
+  let newStatus = dom.domElementId('changeStatus').innerHTML;
+  newStatus = (newStatus == 'Pending')? 'Completed': 'Pending';
+  currentTodos[currentTodos.indexOf(item)].status = newStatus;
+  localStorage.setItem('todos', JSON.stringify(currentTodos));
+  elements.detailsPanel.innerHTML = ''; 
+  todosByProject(getProjectHeading());
+};
+
 const deleteTodo = (item) => {
   currentTodos.splice(currentTodos.indexOf(item), 1);
   localStorage.setItem('todos', JSON.stringify(currentTodos));
