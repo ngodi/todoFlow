@@ -42,14 +42,6 @@
       display: none;
   }
 
-.greeting{
-    padding-top: 100px;
-    text-align: center;
-    color: rgb(19, 167, 226); 
-    font-size: 40px;
-}
-
-
 .projectForm{
     padding: 10px;
     margin: 5px 0;
@@ -79,11 +71,6 @@
     box-shadow: 5px 10px 10px lightgray;
 }
 
-.img-div{
-    margin: 100px 0 0 0;
-    width: 400px;
-    height: 200px;
-}
 
 .todoItem{
     border: 1px solid skyblue;
