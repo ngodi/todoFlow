@@ -1,0 +1,164 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.heading{
+    color: lightseagreen;
+    border: 1px solid lightgray;
+    padding: 20px;
+    box-shadow: 2px 3px lightskyblue;
+    border-radius: 50%;
+}
+.container{
+    padding-top: 20px;
+}
+.main-div{
+    margin-bottom: 50px;
+    padding: 20px;
+}
+.navbar{
+    background-color: white;
+    padding: 10px 100px;
+    box-sizing: border-box;
+}
+.nav-items{
+    display: flex;
+    flex-direction: row;
+}
+.nav-items li{
+    list-style-type: none;
+    margin-left: 50px;
+}
+
+.nav-items li:hover{
+    cursor: pointer;
+}
+.content-div{
+    margin-top: 50px;
+    box-sizing: border-box;
+}
+
+.hidden{
+      display: none;
+  }
+
+.projectForm{
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid lightseagreen;
+    border-radius: 5px;
+    background-color: lightskyblue;
+    
+}
+
+.newProject{
+    width: 80%;
+    margin-right: 20px;
+    border-radius: 8px;
+    height: 30px;
+}
+
+.selProject{
+    width: 80%;
+    height: 30px;
+    border-radius: 5px;
+}
+.todoForm{
+    background-color: rgba(135, 207, 235, 0.644);
+    padding: 10px;
+    box-sizing:border-box;
+    border-radius: 5px;
+    box-shadow: 5px 10px 10px lightgray;
+}
+
+
+.todoItem{
+    border: 1px solid skyblue;
+    padding: 10px;
+    margin: 10px 0;
+    width: 95%;
+    border-radius: 5px;
+    box-shadow: 2px 4px 4px lightgray;
+    transition: all 0.5s;
+}
+.todoItem:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    background: lightgreen;
+    }
+
+.detailsItem{
+    display: flex;
+    justify-content: space-between;  
+}
+.deleteBtn{
+  margin-left: 20px;
+}
+.deleteBtn:hover{
+cursor: pointer;
+}
+.todoDetail{
+    border-radius: 5px;
+    color: rgb(179, 53, 72);
+    padding: 5px;
+    width: 70%; 
+    font-family: 'Times New Roman', Times, serif;
+}
+.blue-back{
+    border-radius: 5px;
+    background: skyblue;
+    padding: 5px;
+}
+.white-back{
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.red-back{
+    border-radius: 5px;
+    background: red;  
+    padding: 2px;
+}
+
+.border-red{
+    border: 2px dotted red;
+}
+
+.detailsPanel{
+    height: 400px;
+    overflow: hidden;
+}
+::-webkit-scrollbar { 
+    display: none; 
+}
+.todoPanel{
+    padding: 10px; 
+    margin: 10px auto;
+    height: 400px;
+    overflow: scroll;
+}
+
+
+
+.sub-heading{
+    font-size: 30px;
+    text-align: center;
+    border: 1px solid rgb(192, 106, 106);
+    background-color:gray;
+    color: white;
+    padding: 5px;
+    margin: 10px 0;
+    box-shadow: 2px 4px 4px lightgray;
+}
+.active{
+    background-color:  lightgreen;
+    text-align: center;
+    padding: 5px;
+}
+.errors{
+    color: red;
+}
+
+.center-text{
+    text-align: center;
+}
