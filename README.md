@@ -18,7 +18,7 @@ Javascript-todo-app is a web app used to create and view the user's tasks listed
 
 ### Live view
 
-[Javascript-todo-app](#)
+[link](https://raw.githack.com/ngodi/todoFlow/development/dist/index.html)
 
 ### Collaborators
 
